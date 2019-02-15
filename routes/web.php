@@ -22,3 +22,8 @@ Route::resource('/welcome','WelcomeController');
 Route::resource('/service','ServiceController');
 Route::resource('/blog','BlogController');
 Route::resource('/contact','ContactController');
+
+Route::get('/mail',function () {
+    return view('mailform'); 
+})->name('mail');
+Route::post('/mail/send','ContactController@mail')->name('form');

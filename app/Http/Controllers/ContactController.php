@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use Illuminate\Http\Request;
+use App\Events\MailEvent;
 
 class ContactController extends Controller
 {
@@ -81,5 +82,10 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         //
+    }
+    public function mail (Request $request){
+        event(new MailEvent($request));
+    
+        return redirect()->back();
     }
 }
