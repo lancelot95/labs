@@ -12,14 +12,19 @@ class AcceuilsTableSeeder extends Seeder
     public function run()
     {
         DB::table('acceuils')->insert([
-            'logonavbar' =>'logo1',
-            'logocarousel'=>'logo2',
+            'logonavbar' =>'img/logo.png',
+            'biglogo' =>'img/big-logo.png',
+            'imageuncarousel'=>'img/01.jpg',
+            'imagedeuxcarousel'=>'img/02.jpg',
+            'imagetestimonial'=>'../img/test-man.png',
             'titrecarousel' => 'Get your freebie template now!',
-            'titrelabsworld'=> 'GET IN THE LAB AND DISCOVER THE WORLD',
+            'titrelabsworld'=> 'GET IN  ',
+            'titrevertworld'=>'THE LAB',
+            'titreword' => 'AND DISCOVER THE WORLD',
             'textelabsworld'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor ',
             'titreclient' => 'WHAT OUR CLIENTS SAY',
-            'titreservice'=> 'GET IN THE LAB AND SEE THE SERVICES',
-            'titreteam' => 'GET IN THE LAB AND MEET THE TEAM',
+            'titreservice'=> 'AND SEE THE SERVICES',
+            'titreteam' => 'AND MEET THE TEAM',
             'titrestandout' =>'Are you ready to stand out?',
             'textestandout'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est.' ,
             'contactus'=> 'CONTACT US',
@@ -29,6 +34,7 @@ class AcceuilsTableSeeder extends Seeder
             05200 Arévalo',
             'phone'=> '0034 37483 2445 322',
             'email'=> 'ello@company.com',
+            'newsletter'=>'Newsletter',
            
             
             

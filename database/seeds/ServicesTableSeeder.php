@@ -11,6 +11,10 @@ class ServicesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('services')->insert([
+            'titre' => 'titre',
+            'texte' => 'texte',
+            
+        ]);
     }
 }

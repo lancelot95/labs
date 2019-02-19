@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h2>Newsletter</h2>
-                <a class="btn btn bg-blue text-danger" href="">Editer titre</a>
+            <h2>{{$acceuils->newsletter}}</h2>
+               
             </div>
             <div class="col-md-9">
                 <!-- newsletter form -->
                 <form class="nl-form">
                     <input type="text" placeholder="Your e-mail here">
-                    <button class="site-btn btn-2">Newsletter</button>
+                <button class="site-btn btn-2">{{$acceuils->newsletter}}</button>
                 </form>
             </div>
         </div>

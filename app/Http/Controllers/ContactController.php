@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contact;
 use Illuminate\Http\Request;
 use App\Events\MailEvent;
+use App\acceuil;
 
 class ContactController extends Controller
 {
@@ -15,7 +16,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact');
+        $acceuils = Acceuil::all()->first();
+        return view('contact',compact('acceuils'));
     }
 
     /**

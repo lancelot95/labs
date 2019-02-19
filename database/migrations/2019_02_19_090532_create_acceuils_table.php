@@ -16,9 +16,14 @@ class CreateAcceuilsTable extends Migration
         Schema::create('acceuils', function (Blueprint $table) {
             $table->increments('id');
             $table->string('logonavbar');
-            $table->string('logocarousel');
+            $table->string('biglogo');
+            $table->string('imageuncarousel');
+            $table->string('imagedeuxcarousel');
+            $table->string('imagetestimonial');
             $table->string('titrecarousel');
             $table->string('titrelabsworld');
+            $table->string('titrevertworld');
+            $table->string('titreword');
             $table->string('textelabsworld');
             $table->string('titreclient');
             $table->string('titreservice');
@@ -31,6 +36,7 @@ class CreateAcceuilsTable extends Migration
             $table->string('addresse');
             $table->string('phone');
             $table->string('email');
+            $table->string('newsletter');
             $table->timestamps();
         });
     }

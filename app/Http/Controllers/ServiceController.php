@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Service;
+use App\Acceuil;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -14,8 +15,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $service = Service::all();
-        return view('service');
+        $acceuils = Acceuil::all()->first();
+
+        return view('service',compact('acceuils'));
     }
 
     /**

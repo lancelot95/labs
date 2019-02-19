@@ -14,8 +14,9 @@ class AcceuilController extends Controller
      */
     public function index()
     {
-        // $acceuils = Acceuil::all();
-        // return view('Admin.Acceuils.acceuil_index',compact('acceuils'));
+        $acceuils = Acceuil::all()->first();
+
+        return view('welcome', compact('acceuils'));
     }
 
     /**
@@ -70,10 +71,10 @@ class AcceuilController extends Controller
      */
     public function update(Request $request, Acceuil $acceuil)
     {
-        // $acceuil->titrecarousel = $request->titrecarousel;
-        // $acceuil->save();
-        // $acceuils = Acceuil::all();
-        // return view('home',compact("acceuils"));
+            // $acceuil->titrecarousel = $request->titrecarousel;
+            // $acceuil->save();
+            // $acceuils = Acceuil::all();
+            // return view('home',compact("acceuils"));
     }
 
     /**

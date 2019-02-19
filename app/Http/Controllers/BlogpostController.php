@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\acceuil;
 class BlogpostController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class BlogpostController extends Controller
      */
     public function index()
     {
-        return view('blog-post');
+        $acceuils = Acceuil::all()->first();
+        return view('blog-post',compact('acceuils'));
+       
     }
 
     /**

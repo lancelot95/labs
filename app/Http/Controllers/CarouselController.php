@@ -45,7 +45,7 @@ class CarouselController extends Controller
         $img->save();
         $articles = Article::all();
         return view('article_index',compact('articles'));
-    }
+    
     }
 
     /**
@@ -56,7 +56,7 @@ class CarouselController extends Controller
      */
     public function show(Carousel $carousel)
     {
-        //
+        
     }
 
     /**
