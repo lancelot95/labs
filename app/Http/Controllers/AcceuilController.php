@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Service;
+use App\Acceuil;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class AcceuilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $service = Service::all();
-        return view('service');
+        // $acceuils = Acceuil::all();
+        // return view('Admin.Acceuils.acceuil_index',compact('acceuils'));
     }
 
     /**
@@ -42,10 +42,10 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Service  $service
+     * @param  \App\Acceuil  $acceuil
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show(Acceuil $acceuil)
     {
         //
     }
@@ -53,33 +53,36 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Service  $service
+     * @param  \App\Acceuil  $acceuil
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit(Acceuil $acceuil)
     {
-        return view ('edit.service_edit');
+        // return view('Admin.Acceuils.acceuil_create',compact('acceuil'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Service  $service
+     * @param  \App\Acceuil  $acceuil
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, Acceuil $acceuil)
     {
-        
+        // $acceuil->titrecarousel = $request->titrecarousel;
+        // $acceuil->save();
+        // $acceuils = Acceuil::all();
+        // return view('home',compact("acceuils"));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Service  $service
+     * @param  \App\Acceuil  $acceuil
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy(Acceuil $acceuil)
     {
         //
     }

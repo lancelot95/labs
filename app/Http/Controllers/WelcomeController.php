@@ -14,6 +14,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
+       
         return view('welcome');
     }
 
@@ -56,8 +57,10 @@ class WelcomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Welcome $welcome)
-    {
-        //
+
+    { 
+         
+       
     }
 
     /**
@@ -69,7 +72,8 @@ class WelcomeController extends Controller
      */
     public function update(Request $request, Welcome $welcome)
     {
-        //
+        
+       
     }
 
     /**

@@ -10,8 +10,8 @@
 {{-- <a class="btn btn bg-blue" href="{{route('home')}}">Page précédente</a>
 
 <a class="btn btn bg-blue" href="{{route('article.index')}}">Base de donnée</a> --}}
-@can('editor')     
-  <form action="{{route('form')}}" method="POST" enctype="multipart/form-data">
+     
+  {{-- <form action="{{route('form')}}" method="POST" enctype="multipart/form-data">
   @csrf
       <div class="form-group">
             <label for="">Name</label>
@@ -41,5 +41,5 @@
       <button class="btn-warning" type="submit">Submit</button>
     
   </form>
-  @endcan
-@stop
+  
+@stop  --}}

@@ -2,6 +2,9 @@
 	<header class="header-section">
             <div class="logo">
                 <img src="img/logo.png" alt=""><!-- Logo -->
+                
+                    <a class="btn btn bg-blue text-danger" href="" >Editer</a>
+               
             </div>
             <!-- Navigation -->
             <div class="responsive"><i class="fa fa-bars"></i></div>

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Service;
+use App\Carousel;
 use Illuminate\Http\Request;
+use Storage;
+use Image;
+use App\Services\Intervention;
 
-class ServiceController extends Controller
+class CarouselController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $service = Service::all();
-        return view('service');
+        $carousels = Carousel::all();
+        return view('carousel_create');
     }
 
     /**
@@ -25,7 +28,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view ('carousel_create');
     }
 
     /**
@@ -34,18 +37,24 @@ class ServiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Intervention $intervention)
     {
-        //
+        $newarticle->image = $request->image->store('','image');
+
+        $img = $intervention->imageResize('image','500','500',$newarticle->image);
+        $img->save();
+        $articles = Article::all();
+        return view('article_index',compact('articles'));
+    }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Service  $service
+     * @param  \App\Carousel  $carousel
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show(Carousel $carousel)
     {
         //
     }
@@ -53,33 +62,33 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Service  $service
+     * @param  \App\Carousel  $carousel
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit(Carousel $carousel)
     {
-        return view ('edit.service_edit');
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Service  $service
+     * @param  \App\Carousel  $carousel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, Carousel $carousel)
     {
-        
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Service  $service
+     * @param  \App\Carousel  $carousel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy(Carousel $carousel)
     {
         //
     }

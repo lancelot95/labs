@@ -24,7 +24,7 @@ class MailListener
     /**
      * Handle the event.
      *
-     * @param  MailEvent  $event
+     * @param  Mail  $event
      * @return void
      */
     public function handle(MailEvent $event)

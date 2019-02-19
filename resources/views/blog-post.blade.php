@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
-@include('layouts.home')
-
+@include('layouts.blog-post')
 
 
 
     
 @endsection
+
