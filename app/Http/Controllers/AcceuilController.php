@@ -22,6 +22,7 @@ class AcceuilController extends Controller
         $services_r = Service::all()->random(3);
         $testimonials = Testimonial::all();
         $teams = Team::all();
+        
             //  dd($testimonials);
         return view('welcome', compact('acceuils','services','services','services_r','testimonials','teams'));
     }
