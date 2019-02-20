@@ -106,48 +106,22 @@
                         </div>
                         <div class="owl-carousel" id="testimonial-slide">
                             <!-- single testimonial -->
+                            @foreach ($testimonials as $testimonial) 
                             <div class="testimonial">
                                 <span>‘​‌‘​‌</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
+                            <p>{{$testimonial->texte}}</p>
                                 <div class="client-info">
                                     <div class="avatar">
-                                        <img src="img/avatar/01.jpg" alt="">
+                                    <img src="{{$testimonial->photo}}" alt="">
                                     </div>
                                     <div class="client-name">
-                                        <h2>Michael Smith</h2>
-                                        <p>CEO Company</p>
+                                    <h2>{{$testimonial->nom}}</h2>
+                                    <p>{{$testimonial->fonction}}</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- single testimonial -->
-                            <div class="testimonial">
-                                <span>‘​‌‘​‌</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
-                                <div class="client-info">
-                                    <div class="avatar">
-                                        <img src="img/avatar/02.jpg" alt="">
-                                    </div>
-                                    <div class="client-name">
-                                        <h2>Michael Smith</h2>
-                                        <p>CEO Company</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonial -->
-                            <div class="testimonial">
-                                <span>‘​‌‘​‌</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
-                                <div class="client-info">
-                                    <div class="avatar">
-                                        <img src="img/avatar/01.jpg" alt="">
-                                    </div>
-                                    <div class="client-name">
-                                        <h2>Michael Smith</h2>
-                                        <p>CEO Company</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonial -->
+                            @endforeach
+                            {{-- <!-- single testimonial -->
                             <div class="testimonial">
                                 <span>‘​‌‘​‌</span>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
@@ -189,6 +163,34 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- single testimonial -->
+                            <div class="testimonial">
+                                <span>‘​‌‘​‌</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
+                                <div class="client-info">
+                                    <div class="avatar">
+                                        <img src="img/avatar/01.jpg" alt="">
+                                    </div>
+                                    <div class="client-name">
+                                        <h2>Michael Smith</h2>
+                                        <p>CEO Company</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single testimonial -->
+                            <div class="testimonial">
+                                <span>‘​‌‘​‌</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
+                                <div class="client-info">
+                                    <div class="avatar">
+                                        <img src="img/avatar/02.jpg" alt="">
+                                    </div>
+                                    <div class="client-name">
+                                        <h2>Michael Smith</h2>
+                                        <p>CEO Company</p>
+                                    </div>
+                                </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -211,30 +213,15 @@
                    
                 </div>
                 <div class="row">
-                    <!-- single member -->
-                    <div class="col-sm-4">
-                        <div class="member">
-                            <img src="img/team/1.jpg" alt="">
-                            <h2>Christinne Williams</h2>
-                            <h3>Project Manager</h3>
+                    @foreach($teams as $team)
+                        <div class="col-sm-4">
+                            <div class="member">
+                                <img src="{{$team->image}}" alt="">
+                                <h2>{{$team->name}}</h2>
+                                <h3>{{$team->post}}</h3>
+                            </div>
                         </div>
-                    </div>
-                    <!-- single member -->
-                    <div class="col-sm-4">
-                        <div class="member">
-                            <img src="img/team/2.jpg" alt="">
-                            <h2>Christinne Williams</h2>
-                            <h3>Junior developer</h3>
-                        </div>
-                    </div>
-                    <!-- single member -->
-                    <div class="col-sm-4">
-                        <div class="member">
-                            <img src="img/team/3.jpg" alt="">
-                            <h2>Christinne Williams</h2>
-                            <h3>Digital designer</h3>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

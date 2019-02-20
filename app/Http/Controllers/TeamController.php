@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Acceuil;
-use App\Service;
-use App\Testimonial;
 use App\Team;
 use Illuminate\Http\Request;
 
-class AcceuilController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +14,7 @@ class AcceuilController extends Controller
      */
     public function index()
     {
-        $acceuils = Acceuil::all()->first();
-        $services = Service::take(9)->get();
-        $services_r = Service::all()->random(3);
-        $testimonials = Testimonial::all();
-        $teams = Team::all();
-            //  dd($testimonials);
-        return view('welcome', compact('acceuils','services','services','services_r','testimonials','teams'));
+        //
     }
 
     /**
@@ -50,10 +41,10 @@ class AcceuilController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Acceuil  $acceuil
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(Acceuil $acceuil)
+    public function show(Team $team)
     {
         //
     }
@@ -61,36 +52,33 @@ class AcceuilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Acceuil  $acceuil
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit(Acceuil $acceuil)
+    public function edit(Team $team)
     {
-        // return view('Admin.Acceuils.acceuil_create',compact('acceuil'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Acceuil  $acceuil
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Acceuil $acceuil)
+    public function update(Request $request, Team $team)
     {
-            // $acceuil->titrecarousel = $request->titrecarousel;
-            // $acceuil->save();
-            // $acceuils = Acceuil::all();
-            // return view('home',compact("acceuils"));
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Acceuil  $acceuil
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Acceuil $acceuil)
+    public function destroy(Team $team)
     {
         //
     }
