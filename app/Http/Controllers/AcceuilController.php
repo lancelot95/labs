@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Acceuil;
+use App\Service;
+
 use Illuminate\Http\Request;
 
 class AcceuilController extends Controller
@@ -15,8 +17,10 @@ class AcceuilController extends Controller
     public function index()
     {
         $acceuils = Acceuil::all()->first();
-
-        return view('welcome', compact('acceuils'));
+        $services = Service::take(9)->get();
+        $services_r = Service::all()->random(3);
+            // dd($service);
+        return view('welcome', compact('acceuils','services','services','services_r'));
     }
 
     /**

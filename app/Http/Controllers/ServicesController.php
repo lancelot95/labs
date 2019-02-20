@@ -13,7 +13,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-       
+        // $services = Service::all()->first();
+        // return view('welcome', compact('services'));
     }
 
     /**
