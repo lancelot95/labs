@@ -17,8 +17,6 @@ class CreateAcceuilsTable extends Migration
             $table->increments('id');
             $table->string('logonavbar');
             $table->string('biglogo');
-            $table->string('imageuncarousel');
-            $table->string('imagedeuxcarousel');
             $table->string('imagetestimonial');
             $table->string('titrecarousel');
             $table->string('titrelabsworld');

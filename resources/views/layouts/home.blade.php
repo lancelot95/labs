@@ -18,8 +18,9 @@
             </div>
             <!-- slider -->
             <div id="hero-slider" class="owl-carousel">
-            <div class="item  hero-item" data-bg="{{$acceuils->imageuncarousel}}"></div>
-                <div class="item  hero-item" data-bg="{{$acceuils->imagedeuxcarousel}}"></div>
+                @foreach ($carou as $item)
+                <div class="item  hero-item" data-bg="{{$item->image_url}}"></div>
+                @endforeach
             </div>
         </div>
         <!-- Intro Section -->

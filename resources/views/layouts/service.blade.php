@@ -47,6 +47,7 @@
                     @endforeach
                    
                 </div>
+                {{ $services->links() }}
                 <div class="text-center">
                 <a href="#ici" class="site-btn">Browse</a>
                 </div>

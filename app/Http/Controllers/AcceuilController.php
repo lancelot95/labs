@@ -7,7 +7,7 @@ use App\Service;
 use App\Testimonial;
 use App\Team;
 use Illuminate\Http\Request;
-
+use App\Carousel;
 class AcceuilController extends Controller
 {
     /**
@@ -17,6 +17,7 @@ class AcceuilController extends Controller
      */
     public function index()
     {
+        $carou = Carousel::all();
         $acceuils = Acceuil::all()->first();
         $services = Service::take(9)->get();
         $services_r = Service::all()->random(3);
@@ -24,7 +25,7 @@ class AcceuilController extends Controller
         $teams = Team::all();
         
             //  dd($testimonials);
-        return view('welcome', compact('acceuils','services','services','services_r','testimonials','teams'));
+        return view('welcome', compact('acceuils','services','services','services_r','testimonials','teams', 'carou'));
     }
 
     /**

@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>LABS</b>',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b></b>LABS',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,30 +108,34 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        
+        'MODIFICATION',
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'HOME EDIT',
+             'url'  => 'acceuiladmin',
+            'icon' => 'home',
         ],
         [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        'ACCOUNT SETTINGS',
-        [
-            'text' => 'Profile',
+            'text' => 'SERVICES EDIT',
             'url'  => 'admin/settings',
-            'icon' => 'user',
+            'icon' => 'gears',
         ],
         [
-            'text' => 'Change Password',
+            'text' => 'BLOG EDIT',
             'url'  => 'admin/settings',
-            'icon' => 'lock',
+            'icon' => 'book',
         ],
+        [
+            'text' => 'BLOG-OST EDIT',
+            'url'  => 'admin/settings',
+            'icon' => 'book',
+        ],
+        [
+            'text' => 'CONTACT EDIT',
+            'url'  => 'admin/settings',
+            'icon' => 'commenting',
+        ],
+       
         [
             'text'    => 'Multilevel',
             'icon'    => 'share',

@@ -14,8 +14,6 @@ class AcceuilsTableSeeder extends Seeder
         DB::table('acceuils')->insert([
             'logonavbar' =>'img/logo.png',
             'biglogo' =>'img/big-logo.png',
-            'imageuncarousel'=>'img/01.jpg',
-            'imagedeuxcarousel'=>'img/02.jpg',
             'imagetestimonial'=>'../img/test-man.png',
             'titrecarousel' => 'Get your freebie template now!',
             'titrelabsworld'=> 'GET IN  ',

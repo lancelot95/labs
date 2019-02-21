@@ -1,15 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Service;
 use App\Acceuil;
-use App\Project;
-use App\World;
-use App\worldright;
 use Illuminate\Http\Request;
-
-class ServiceController extends Controller
+use App\Carousel;
+class AcceuiladminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +13,13 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        $carou = Carousel::all();
         $acceuils = Acceuil::all()->first();
-        $services = Service::paginate(5);
-        $projects = Project::all();
-        $worlds = World::take(3)->get();
-        $worldrights = Worldright::take(3)->get();
-        return view('service',compact('acceuils','services','projects','worlds','worldrights'));
+        // $services = Service::take(9)->get();
+        // $services_r = Service::all()->random(3);
+        // $testimonials = Testimonial::all();
+        // $teams = Team::all();
+        return view('edit.acceuil_index', compact('acceuils', 'carou'));
     }
 
     /**
@@ -50,10 +46,10 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Service  $service
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show($id)
     {
         //
     }
@@ -61,33 +57,33 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Service  $service
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit($id)
     {
-        return view ('edit.service_edit');
+        return view('edit.acceuil_edit');
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Service  $service
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, $id)
     {
-        
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Service  $service
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy($id)
     {
         //
     }

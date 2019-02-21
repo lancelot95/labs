@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Carousel;
 class CarouselsTableSeeder extends Seeder
 {
     /**
@@ -11,6 +11,15 @@ class CarouselsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+       
+        Carousel::create([
+            'image_url' => 'img/01.jpg',
+            
+        ]);
+        Carousel::create([
+            'image_url' => 'img/02.jpg',
+            
+        ]);
+
     }
 }

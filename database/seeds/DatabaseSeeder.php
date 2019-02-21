@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
          $this->call(ProjectsTableSeeder::class);
          $this->call(WorldrightsTableSeeder::class);
          $this->call(WorldsTableSeeder::class);
+         $this->call(CarouselsTableSeeder::class);
     }
 }
