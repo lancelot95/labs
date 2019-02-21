@@ -18,6 +18,7 @@
             </div>
             <!-- slider -->
             <div id="hero-slider" class="owl-carousel">
+                
                 @foreach ($carou as $item)
                 <div class="item  hero-item" data-bg="{{$item->image_url}}"></div>
                 @endforeach

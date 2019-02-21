@@ -30,7 +30,9 @@
 </table>
 
 <h3>Titre et texte</h3>
-<a class="btn btn bg-blue" href="">editer</a>
+@foreach ($acceuils as $acceuil)
+<a class="btn btn bg-blue" href="{{route('acceuiladmin.edit',['id'=>$acceuils->id])}}">editer</a>    
+
   <table class="table">
     <thead>
       <tr>
@@ -93,6 +95,8 @@
       </tr>
     </tbody>
   </table>
+@endforeach
+
   <h2>CONTACTUS</h2>
   <a class="btn btn bg-blue" href="">editer</a>
   <table class="table">

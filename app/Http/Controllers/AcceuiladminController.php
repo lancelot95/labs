@@ -60,9 +60,10 @@ class AcceuiladminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Acceuil $acceuils)
     {
-        return view('edit.acceuil_edit');
+        
+        return view('edit.acceuil_edit',compact('acceuils'));
     }
 
     /**
@@ -72,9 +73,21 @@ class AcceuiladminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Aceuil $aceuils)
     {
-        //
+        $acceuils->titrecarousel = $request->titrecarousel;
+        $acceuils->titrelabsworld = $request->titrelabsworld;
+        $acceuils->titrevertworld = $request->titrevertworld;
+        $acceuils->titreword = $request->titreword;
+        $acceuils->textelabsworld = $request->textelabsworld;
+        $acceuils->titreclient = $request->titreclient;
+        $acceuils->titreservice = $request->titreservice;
+        $acceuils->titreteam = $request->titreteam;
+        $acceuils->titrestandout = $request->titrestandout;
+        $acceuils->textestandout = $request->textestandout;
+        $acceuils->update();
+        $acceuils = Acceuil::all()->first();
+        return view('edit.acceuil_index', compact('acceuils'));
     }
 
     /**

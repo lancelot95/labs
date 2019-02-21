@@ -25,6 +25,7 @@ class AcceuilsTableSeeder extends Seeder
             'titreteam' => 'AND MEET THE TEAM',
             'titrestandout' =>'Are you ready to stand out?',
             'textestandout'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est.' ,
+            
             'contactus'=> 'CONTACT US',
             'texte'=> 'Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum.' ,
             'mainoffice'=> 'Main Office',
