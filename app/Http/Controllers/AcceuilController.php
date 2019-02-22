@@ -8,6 +8,7 @@ use App\Testimonial;
 use App\Team;
 use Illuminate\Http\Request;
 use App\Carousel;
+use App\Acceuiladmin;
 class AcceuilController extends Controller
 {
     /**

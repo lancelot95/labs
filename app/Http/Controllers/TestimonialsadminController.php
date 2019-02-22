@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Team;
 use Illuminate\Http\Request;
 
-class TeamController extends Controller
+class TestimonialsadminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +12,8 @@ class TeamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-
     {
-
-      
+        return view('edit.testimonial_index');
     }
 
     /**
@@ -43,10 +40,10 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Team  $team
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Team $team)
+    public function show($id)
     {
         //
     }
@@ -54,10 +51,10 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Team  $team
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit($id)
     {
         //
     }
@@ -66,10 +63,10 @@ class TeamController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Team  $team
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -77,10 +74,10 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Team  $team
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy($id)
     {
         //
     }

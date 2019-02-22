@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Acceuil;
+use App\Project;
+use App\World;
+use App\worldright;
+use App\Service;
 use Illuminate\Http\Request;
-
-class ServicesController extends Controller
+class ServiceadminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +17,12 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        // $services = Service::all()->first();
-        // return view('welcome', compact('services'));
+        // $acceuils = Acceuil::all()->first();
+        $services = Service::paginate(7);
+        $services2 = Service::all();
+
+        
+        return view('service.service_index',compact('services', 'services2'));
     }
 
     /**
@@ -55,9 +63,11 @@ class ServicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( Service $service)
     {
-        //
+        
+        $test = Service::first(); 
+        return view('service.service_edit',compact('service', 'test'));
     }
 
     /**
@@ -67,9 +77,19 @@ class ServicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $service = Service::first();
+        $service->titre = $request->titre;
+        $service->texte = $request->texte;
+        $service->logo = $request->logo;
+        $service->save();
+        $acceuils = Acceuil::all()->first();
+        $services = Service::paginate(7);
+        $projects = Project::all();
+        $worlds = World::take(3)->get();
+        $worldrights = Worldright::take(3)->get();
+        return view('service.service_index',compact('acceuils','services','projects','worlds','worldrights'));
     }
 
     /**

@@ -19,7 +19,7 @@ class ServiceController extends Controller
     public function index()
     {
         $acceuils = Acceuil::all()->first();
-        $services = Service::paginate(5);
+        $services = Service::paginate(7);
         $projects = Project::all();
         $worlds = World::take(3)->get();
         $worldrights = Worldright::take(3)->get();

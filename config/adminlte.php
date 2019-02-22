@@ -114,10 +114,11 @@ return [
             'text' => 'HOME EDIT',
              'url'  => 'acceuiladmin',
             'icon' => 'home',
+            
         ],
         [
             'text' => 'SERVICES EDIT',
-            'url'  => 'admin/settings',
+            'url'  => 'serviceadmin',
             'icon' => 'gears',
         ],
         [

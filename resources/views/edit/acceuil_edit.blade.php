@@ -7,15 +7,18 @@
 @stop
 
 @section('content')
-<form action="{{route('acceuiladmin.update',['acceuiladmin'=>$acceuils->id])}}" method="PUT" enctype="multipart/form-data">
-    <button class="btn btn-danger" type="submit">
+<form action="{{route('acceuiladmin.update', ['acceuil' => $test->id])}}" method="POST" enctype="multipart/form-data">
+    @method("PUT")
+@csrf
+<button class="btn btn-danger" type="submit">
         UPDATE
     </button>
 <div class="form-group">
-  <label for="">titrecarousel</label>
-  <input type="text" name="titrecarousel" id="" class="form-control" placeholder="" aria-describedby="helpId">
-  <small id="helpId" class="text-muted">Help text</small>
+    <label for="">titrecarousel</label>
+    <input type="text" name="titrecarousel" id="" class="form-control" value="{{$test->titrecarousel}}" aria-describedby="helpId">
+    <small id="helpId" class="text-muted">Help text</small>
 </div>
+   
 
 <div class="form-group">
     <label for="">titrelabsworld</label>

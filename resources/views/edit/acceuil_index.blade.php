@@ -9,7 +9,7 @@
 
 @section('content')
 <h3>Image carousel</h3>
-<a class="btn btn bg-blue" href="">editer</a>
+<a class="btn btn bg-blue" href="{{route('acceuiladmin.create')}}">Ajouter une image</a>
 <table class="table">
   <thead>
     <tr>
@@ -31,7 +31,7 @@
 
 <h3>Titre et texte</h3>
 @foreach ($acceuils as $acceuil)
-<a class="btn btn bg-blue" href="{{route('acceuiladmin.edit',['id'=>$acceuils->id])}}">editer</a>    
+<a class="btn btn bg-blue" href="{{route('acceuiladmin.edit',['id'=>$acceuils->id])}}">Editer</a> 
 
   <table class="table">
     <thead>

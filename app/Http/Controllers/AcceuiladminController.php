@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Acceuil;
-use Illuminate\Http\Request;
 use App\Carousel;
+use App\Service;
+use App\Testimonial;
+use App\Team;
+use Illuminate\Http\Request;
 class AcceuiladminController extends Controller
 {
     /**
@@ -15,10 +19,7 @@ class AcceuiladminController extends Controller
     {
         $carou = Carousel::all();
         $acceuils = Acceuil::all()->first();
-        // $services = Service::take(9)->get();
-        // $services_r = Service::all()->random(3);
-        // $testimonials = Testimonial::all();
-        // $teams = Team::all();
+       
         return view('edit.acceuil_index', compact('acceuils', 'carou'));
     }
 
@@ -29,7 +30,8 @@ class AcceuiladminController extends Controller
      */
     public function create()
     {
-        //
+        $carou = Carousel::all();
+        return view('edit.acceuil_create',compact('carou'));
     }
 
     /**
@@ -40,7 +42,13 @@ class AcceuiladminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newcarou = new Carousel;
+        $newcarou->image_url = $request ->image_url;
+        $newcarou->save();
+        $carou = Carousel::all();
+        $acceuils = Acceuil::first();  
+       
+        return view('edit.acceuil_index',compact('carou','acceuils'));
     }
 
     /**
@@ -60,11 +68,12 @@ class AcceuiladminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Acceuil $acceuils)
+    public function edit(Acceuil $acceuil)
     {
-        
-        return view('edit.acceuil_edit',compact('acceuils'));
+        $test = Acceuil::first();
+        return view('edit.acceuil_edit',compact('acceuil', 'test'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -73,21 +82,29 @@ class AcceuiladminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Aceuil $aceuils)
+    public function update(Request $request)
     {
-        $acceuils->titrecarousel = $request->titrecarousel;
-        $acceuils->titrelabsworld = $request->titrelabsworld;
-        $acceuils->titrevertworld = $request->titrevertworld;
-        $acceuils->titreword = $request->titreword;
-        $acceuils->textelabsworld = $request->textelabsworld;
-        $acceuils->titreclient = $request->titreclient;
-        $acceuils->titreservice = $request->titreservice;
-        $acceuils->titreteam = $request->titreteam;
-        $acceuils->titrestandout = $request->titrestandout;
-        $acceuils->textestandout = $request->textestandout;
-        $acceuils->update();
-        $acceuils = Acceuil::all()->first();
-        return view('edit.acceuil_index', compact('acceuils'));
+        $acceuil = Acceuil::first();
+        $acceuil->titrecarousel = $request->titrecarousel;
+        $acceuil->titrelabsworld = $request->titrelabsworld;
+        $acceuil->titrevertworld = $request->titrevertworld;
+        $acceuil->titreword = $request->titreword;
+        $acceuil->textelabsworld = $request->textelabsworld;
+        $acceuil->titreclient = $request->titreclient;
+        $acceuil->titreservice = $request->titreservice;
+        $acceuil->titreteam = $request->titreteam;
+        $acceuil->titrestandout = $request->titrestandout;
+        $acceuil->textestandout = $request->textestandout;
+      
+        $acceuil->save();
+        $acceuils = Acceuil::first();  
+        $carou = Carousel::all();
+        $services = Service::take(9)->get();
+        $services_r = Service::all()->random(3);
+        $testimonials = Testimonial::all();
+        $teams = Team::all();
+
+        return view('edit.acceuil_index', compact('acceuils', 'carou','services','services_r','testimonials','teams'));
     }
 
     /**
