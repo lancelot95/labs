@@ -30,114 +30,76 @@
 </table>
 
 <h3>Titre et texte</h3>
-@foreach ($acceuils as $acceuil)
-<a class="btn btn bg-blue" href="{{route('acceuiladmin.edit',['id'=>$acceuils->id])}}">Editer</a> 
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>database</th>
-        <th>origine</th>
-      </tr>
-    </thead>
-    <tbody>
+@foreach ($acceuils as $item)
+<a class="btn btn bg-blue" href="{{route('acceuiladmin.edit',['id'=>$item->id])}}">Editer</a> 
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>database</th>
+      <th>origine</th>
+    </tr>
+  </thead>
+  <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>{{$acceuils->titrecarousel}}</td>
+        <td>{{$item->titrecarousel}}</td>
         <td>titre du carousel</td>
       </tr>
       <tr>
         <th scope="row">2</th>
-        <td>{{$acceuils->titrelabsworld}}</td>
+        <td>{{$item->titrelabsworld}}</td>
         <td>titre des projects</td>
        
       </tr>
       <tr>
         <th scope="row">3</th>
-        <td>{{$acceuils->titrevertworld}}</td>
+        <td>{{$item->titrevertworld}}</td>
         <td>titre des projects</td>
       </tr>
       <tr>
         <th scope="row">4</th>
-        <td>{{$acceuils->titreword}}</td>
+        <td>{{$item->titreword}}</td>
         <td>titre des projects</td>
       </tr>
       <tr>
         <th scope="row">5</th>
-        <td>{{$acceuils->textelabsworld}}</td>
+        <td>{{$item->textelabsworld}}</td>
         <td>texte des projects</td>
       </tr>
       <tr>
           <th scope="row">6</th>
-          <td>{{$acceuils->titreclient}}</td>
+          <td>{{$item->titreclient}}</td>
           <td>titre client</td>
       </tr>
       <tr>
           <th scope="row">7</th>
-          <td>{{$acceuils->titreservice}}</td>
+          <td>{{$item->titreservice}}</td>
           <td>titre service</td>
       </tr>
       <tr>
           <th scope="row">8</th>
-          <td>{{$acceuils->titreteam}}</td>
+          <td>{{$item->titreteam}}</td>
           <td>titre team</td>
       </tr>
       <tr>
           <th scope="row">9</th>
-          <td>{{$acceuils->titrestandout}}</td>
+          <td>{{$item->titrestandout}}</td>
           <td>stand out</td>
       </tr>
       <tr>
           <th scope="row">10</th>
-          <td>{{$acceuils->newsletter}}</td>
+          <td>{{$item->newsletter}}</td>
           <td>titre newsletter</td>
       </tr>
     </tbody>
   </table>
-@endforeach
+  @endforeach
 
-  <h2>CONTACTUS</h2>
-  <a class="btn btn bg-blue" href="">editer</a>
-  <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">database</th>
-          <th>description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>{{$acceuils->contactus}}</td>
-          <td>titre du contact</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>{{$acceuils->texte}}</td>
-          <td>texte de contact</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>{{$acceuils->mainoffice}}</td>
-            <td>titre main office</td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>{{$acceuils->addresse}}</td>
-            <td>adresse</td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>{{$acceuils->phone}}</td>
-            <td>phone</td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>{{$acceuils->email}}</td>
-            <td>email</td>
-        </tr>
-      </tbody> 
-      
+ 
+
+ 
+   
+    
 @stop

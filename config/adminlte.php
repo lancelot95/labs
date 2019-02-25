@@ -117,6 +117,18 @@ return [
             
         ],
         [
+            'text' => 'TESTIMONIALS EDIT',
+             'url'  => 'testimonialsadmin',
+            'icon' => '',
+            
+        ],
+        [
+            'text' => 'TESTIMONIALS EDIT',
+             'url'  => 'testimonialsadmin',
+            'icon' => '',
+            
+        ],
+        [
             'text' => 'SERVICES EDIT',
             'url'  => 'serviceadmin',
             'icon' => 'gears',
@@ -133,7 +145,7 @@ return [
         ],
         [
             'text' => 'CONTACT EDIT',
-            'url'  => 'admin/settings',
+            'url'  => 'contact',
             'icon' => 'commenting',
         ],
        

@@ -25,7 +25,7 @@ Route::resource('/contact','ContactController');
 Route::resource('/carousel','CarouselController');
 Route::resource('/acceuil','AcceuilController');
 Route::resource('/acceuiladmin','AcceuiladminController');
-Route::resource('/testimonialadmin','TestimonialadminController');
+Route::resource('/testimonialsadmin','TestimonialsadminController');
 
 Route::get('/mail',function () {
     return view('mailform'); 

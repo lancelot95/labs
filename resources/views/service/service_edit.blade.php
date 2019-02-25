@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="{{route('serviceadmin.update', ['service' => $test->id])}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('serviceadmin.update', ['services' => $test->id])}}" method="POST" enctype="multipart/form-data">
     @method("PUT")
 @csrf
 <div class="form-group">
@@ -26,6 +26,9 @@
     <label for="">logo</label>
     <input type="text" name="logo" id="" class="form-control" value="{{$test->logo}}" aria-describedby="helpId">
     <small id="helpId" class="text-muted">Help text</small>
+     <select name="" id="">
+         
+     </select>
 </div>
 
 <button class="btn btn-danger" type="submit">

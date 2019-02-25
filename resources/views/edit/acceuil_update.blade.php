@@ -15,7 +15,7 @@
             <h2>{{$item->titrelabsworld}}
              <span>{{$item->titrevertworld}}</span>
             {{$item->titreword}}</h2>
-            <p>{{$acceuils->textelabsworld}}</p>
+            <p>{{$item->textelabsworld}}</p>
             <h2>{{$item->titrelabsworld}}
                     <span>{{$item->titrevertworld}}</span>
                    {{$item->titreclient}}</h2>

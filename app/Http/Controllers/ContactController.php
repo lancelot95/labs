@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Events\MailEvent;
 use App\acceuil;
 
+
+
 class ContactController extends Controller
 {
     /**
@@ -16,8 +18,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $acceuils = Acceuil::all()->first();
-        return view('contact',compact('acceuils'));
+        $acceuils = Acceuil::all();
+        return view('contact.contact_index',compact('acceuils'));
     }
 
     /**
@@ -58,9 +60,10 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit(Acceuil $acceuil)
     {
-        //
+        $test = Acceuil::first();
+        return view('edit.acceuil_edit',compact('acceuil', 'test'));
     }
 
     /**

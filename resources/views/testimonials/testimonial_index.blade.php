@@ -8,36 +8,39 @@
 @stop
 
 @section('content')
-<h3>Services</h3>
-<a class="btn btn bg-blue" href="{{route('serviceadmin.create')}}">Ajouter un service</a>
+<h3>Testimonials</h3>
+<a class="btn btn bg-blue" href="{{route('testimonialsadmin.create')}}">create testimonials</a>
 <table class="table">
   <thead>
     <tr>
       <th>id</th>
-      <th>Titre</th>
+      <th>Testimonials</th>
       <th>Text</th>
-      <th>Icon</th>
+      <th>Nom</th>
+      <th>Fonction</th>
       <th>Action</th>
       <th>Delete</th>
     </tr>
   </thead>
   <tbody>
-    @foreach ($services as $item)       
+    @foreach ($testimonials as $item)       
     <tr>
       <td scope="row">{{$item->id}}</td>
-      <td>{{$item->titre}}</td>
       <td>{{$item->texte}}</td>
-      <td>{{$item->logo}}</td>
+      <td>{{$item->nom}}</td>
+      <td>{{$item->fonction}}</td>
+      <td>{{$item->fonction}}</td>
+
       <td>
-        <a class="btn btn bg-blue" href="{{route('serviceadmin.edit',['service'=>$item->id])}}">Editer</a>
+         <a class="btn btn bg-blue" href="{{route('testimonialsadmin.edit',['id'=>$item->id])}}">Editer</a> 
       </td>
       <td>
-          <form action="{{route('serviceadmin.destroy',['id'=>$item->id])}}" method="post">
+          <form action="{{route('testimonialsadmin.destroy',['id'=>$item->id])}}" method="post">
               @method('delete')
               @csrf
               <button class="btn btn bg-danger text-white" type="submit">Delete</button>
           </form>
-        </td>
+      </td>
     </tr>
     @endforeach
 

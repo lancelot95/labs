@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Acceuil;
-use App\Project;
-use App\World;
-use App\worldright;
 use App\Service;
 use Illuminate\Http\Request;
 class ServiceadminController extends Controller
@@ -18,11 +15,14 @@ class ServiceadminController extends Controller
     public function index()
     {
         // $acceuils = Acceuil::all()->first();
-        $services = Service::paginate(7);
-        $services2 = Service::all();
+        $services = Service::all();
+        // $services2 = Service::all();
+        // $projects = Project::all();
+        // $projects2 = Project::all();
+        
 
         
-        return view('service.service_index',compact('services', 'services2'));
+        return view('service.service_index',compact('services'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ServiceadminController extends Controller
      */
     public function create()
     {
-        //
+        return view('service.service_create');
     }
 
     /**
@@ -43,7 +43,16 @@ class ServiceadminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newservice = new Service;
+        $newservice->titre = $request ->titre;
+        $newservice->texte = $request ->texte;
+        $newservice->logo = $request ->logo;
+        // dd($newservice);
+        $newservice->save();
+        $service = Service::all();
+        
+       
+        return view('service.service_index',compact('service'));
     }
 
     /**
@@ -63,11 +72,12 @@ class ServiceadminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit( Service $service)
-    {
+    public function edit($id)
+    {   
         
-        $test = Service::first(); 
-        return view('service.service_edit',compact('service', 'test'));
+        $test = Service::where('id', $id)->first();
+        
+        return view('service.service_edit',compact('test'));
     }
 
     /**
@@ -77,19 +87,23 @@ class ServiceadminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $service = Service::first();
+        $service = Service::where('id', $id)->first();
         $service->titre = $request->titre;
         $service->texte = $request->texte;
         $service->logo = $request->logo;
         $service->save();
-        $acceuils = Acceuil::all()->first();
-        $services = Service::paginate(7);
-        $projects = Project::all();
-        $worlds = World::take(3)->get();
-        $worldrights = Worldright::take(3)->get();
-        return view('service.service_index',compact('acceuils','services','projects','worlds','worldrights'));
+
+        
+
+        // $acceuils = Acceuil::all();
+        $services = Service::all();
+        // $projects = Project::all();
+        // $worlds = World::take(3)->get();
+        // $worldrights = Worldright::take(3)->get();
+        
+        return view('service.service_index',compact('services'));
     }
 
     /**
@@ -100,6 +114,11 @@ class ServiceadminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = Service::where('id',$id)->first();
+        $service->delete();
+        $services = Service::all();
+        
+        return view('service.service_index',compact('services'));
     }
+    
 }

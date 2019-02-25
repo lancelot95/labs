@@ -18,7 +18,7 @@ class AcceuiladminController extends Controller
     public function index()
     {
         $carou = Carousel::all();
-        $acceuils = Acceuil::all()->first();
+        $acceuils = Acceuil::all();
        
         return view('edit.acceuil_index', compact('acceuils', 'carou'));
     }
@@ -46,7 +46,7 @@ class AcceuiladminController extends Controller
         $newcarou->image_url = $request ->image_url;
         $newcarou->save();
         $carou = Carousel::all();
-        $acceuils = Acceuil::first();  
+        $acceuils = Acceuil::all();  
        
         return view('edit.acceuil_index',compact('carou','acceuils'));
     }
@@ -96,8 +96,8 @@ class AcceuiladminController extends Controller
         $acceuil->titrestandout = $request->titrestandout;
         $acceuil->textestandout = $request->textestandout;
       
-        $acceuil->save();
-        $acceuils = Acceuil::first();  
+        $acceuil->update();
+        $acceuils = Acceuil::all();  
         $carou = Carousel::all();
         $services = Service::take(9)->get();
         $services_r = Service::all()->random(3);

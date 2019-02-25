@@ -16,4 +16,13 @@
             @endforeach
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            @foreach($project as $item)
+                <h2>{{$project->titre}}</h2>
+                <p>{{$project->texte}}</p> 
+                <i>{{$project->image}}</i>   
+            @endforeach
+        </div>
+    </div>
 @stop

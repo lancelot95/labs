@@ -15,26 +15,26 @@ class CreateAcceuilsTable extends Migration
     {
         Schema::create('acceuils', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('logonavbar');
-            $table->string('biglogo');
-            $table->string('imagetestimonial');
-            $table->string('titrecarousel');
-            $table->string('titrelabsworld');
-            $table->string('titrevertworld');
-            $table->string('titreword');
-            $table->string('textelabsworld');
-            $table->string('titreclient');
-            $table->string('titreservice');
-            $table->string('titreteam');
-            $table->string('titrestandout');
-            $table->string('textestandout');
-            $table->string('contactus');
-            $table->string('texte');
-            $table->string('mainoffice');
-            $table->string('addresse');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('newsletter');
+            $table->string('logonavbar')->nullable();
+            $table->string('biglogo')->nullable();
+            $table->string('imagetestimonial')->nullable();
+            $table->string('titrecarousel')->nullable();
+            $table->string('titrelabsworld')->nullable();
+            $table->string('titrevertworld')->nullable();
+            $table->string('titreword')->nullable();
+            $table->string('textelabsworld')->nullable();
+            $table->string('titreclient')->nullable();
+            $table->string('titreservice')->nullable();
+            $table->string('titreteam')->nullable();
+            $table->string('titrestandout')->nullable();
+            $table->string('textestandout')->nullable();
+            $table->string('contactus')->nullable();
+            $table->string('texte')->nullable();
+            $table->string('mainoffice')->nullable();
+            $table->string('addresse')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('newsletter')->nullable();
             $table->timestamps();
         });
     }
