@@ -28,12 +28,6 @@ class CreateAcceuilsTable extends Migration
             $table->string('titreteam')->nullable();
             $table->string('titrestandout')->nullable();
             $table->string('textestandout')->nullable();
-            $table->string('contactus')->nullable();
-            $table->string('texte')->nullable();
-            $table->string('mainoffice')->nullable();
-            $table->string('addresse')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email')->nullable();
             $table->string('newsletter')->nullable();
             $table->timestamps();
         });

@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
          $this->call(TestimonialsTableSeeder::class);
          $this->call(TeamsTableSeeder::class);
          $this->call(ProjectsTableSeeder::class);
-         $this->call(WorldrightsTableSeeder::class);
          $this->call(WorldsTableSeeder::class);
          $this->call(CarouselsTableSeeder::class);
+         $this->call(ContactsTableSeeder::class);
     }
 }

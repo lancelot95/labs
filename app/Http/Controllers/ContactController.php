@@ -18,8 +18,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $acceuils = Acceuil::all();
-        return view('contact.contact_index',compact('acceuils'));
+        $contacts = Contact::all();
+        // dd($contacts);
+        return view('contact.contact_index',compact('contacts'));
     }
 
     /**
@@ -60,10 +61,11 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Acceuil $acceuil)
+    public function edit(Contact $contact)
     {
-        $test = Acceuil::first();
-        return view('edit.acceuil_edit',compact('acceuil', 'test'));
+        $test = Contact::all();
+       
+        return view('edit.acceuil_edit',compact('test'));
     }
 
     /**
@@ -73,9 +75,18 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request)
     {
-        //
+        $contact = Acceuil::first();
+        $contact ->contactus = $request ->contactus;
+        $contact ->texte = $request ->texte;
+        $contact ->mainoffice = $request ->mainoffice;
+        $contact ->addresse = $request ->addresse;
+        $contact ->phone = $request ->phone;
+        $contact ->email = $request ->email;
+        $contact->update();
+        $contacts = Contact::all();  
+        return view('contact.contact_index',compact('contacts'));
     }
 
     /**

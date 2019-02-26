@@ -20,10 +20,12 @@ class ServiceController extends Controller
     {
         $acceuils = Acceuil::all()->first();
         $services = Service::paginate(7);
-        $projects = Project::all();
+        $projects = Project::all()->reverse()->take(3);
+
         $worlds = World::take(3)->get();
-        $worldrights = Worldright::take(3)->get();
-        return view('service',compact('acceuils','services','projects','worlds','worldrights'));
+        $test = World::all()->reverse()->take(3);
+        // $worlds = World::();
+        return view('service',compact('acceuils','services','projects','worlds','test'));
     }
 
     /**

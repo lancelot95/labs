@@ -14,7 +14,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        // return view('')
+        $projects = Project::all();
+         return view('project.projet_index',compact('projects'));
     }
 
     /**
@@ -24,7 +25,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+      
+          return view('project.projet_create');
     }
 
     /**
@@ -35,7 +37,16 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newproject = new Project;
+        $newproject->titre = $request ->titre;
+        $newproject->texte = $request ->texte;
+        $newproject->image = $request ->image;
+        // dd($newservice);
+        $newproject->save();
+        $projects = Project::all();
+        
+        return view('project.projet_index',compact('projects'));
+        
     }
 
     /**
@@ -55,9 +66,10 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit( $id)
     {
-        //
+        $test = Project::where('id', $id)->first();
+        return view('project.projet_edit',compact('test'));
     }
 
     /**
@@ -67,9 +79,17 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request,$id)
     {
-        //
+        $project = Project::where('id', $id)->first();
+        $project->titre = $request->titre;
+        $project->texte = $request->texte;
+        $project->image = $request->image;
+        $project->save();
+        $projects = Project::all();
+       
+        
+        return view('project.projet_index',compact('projects'));
     }
 
     /**
@@ -78,8 +98,12 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy($id)
     {
-        //
+        $project = Project::where('id',$id)->first();
+        $project->delete();
+        $projects = Project::all();
+        
+        return view('project.projet_index',compact('projects'));
     }
 }

@@ -117,9 +117,9 @@ return [
             
         ],
         [
-            'text' => 'TESTIMONIALS EDIT',
-             'url'  => 'testimonialsadmin',
-            'icon' => '',
+            'text' => 'world EDIT',
+             'url'  => 'worldadmin',
+            'icon' => 'world',
             
         ],
         [
@@ -132,6 +132,12 @@ return [
             'text' => 'SERVICES EDIT',
             'url'  => 'serviceadmin',
             'icon' => 'gears',
+        ],
+        [
+            'text' => 'project EDIT',
+             'url'  => 'projectadmin',
+            'icon' => 'project',
+            
         ],
         [
             'text' => 'BLOG EDIT',

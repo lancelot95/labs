@@ -88,14 +88,14 @@
                     </div>
                     <!-- feature item -->
                     <div class="col-md-4 col-sm-4 features">
-                        @foreach ($worldrights as $worldright)
+                        @foreach ($test as $world)
                             <div class="icon-box light">
                                 <div class="icon">
-                                <i class="{{$worldright->logo}}"></i>
+                                <i class="{{$world->logo}}"></i>
                                 </div>
                                 <div class="service-text">
-                                    <h2>{{$worldright->titre}}</h2>
-                                <p>{{$worldright->texte}}</p>
+                                    <h2>{{$world->titre}}</h2>
+                                <p>{{$world->texte}}</p>
                                 </div>
                             </div>
                         @endforeach

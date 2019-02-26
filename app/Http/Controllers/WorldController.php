@@ -14,7 +14,8 @@ class WorldController extends Controller
      */
     public function index()
     {
-        //
+        $worlds = World::all();
+        return view('world.world_index',compact('worlds'));
     }
 
     /**
@@ -55,9 +56,10 @@ class WorldController extends Controller
      * @param  \App\World  $world
      * @return \Illuminate\Http\Response
      */
-    public function edit(World $world)
+    public function edit($id)
     {
-        //
+        $test = World::where('id', $id)->first();
+        return view('world.world_edit',compact('test'));
     }
 
     /**
@@ -67,10 +69,19 @@ class WorldController extends Controller
      * @param  \App\World  $world
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, World $world)
+    public function update(Request $request,$id)
     {
-        //
+        $world = World::where('id', $id)->first();
+        $world->titre = $request->titre;
+        $world->texte = $request->texte;
+        $world->logo = $request->logo;
+        $world->save();
+        $worlds = World::all();
+       
+        
+        return view('world.world_index',compact('worlds'));
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +89,12 @@ class WorldController extends Controller
      * @param  \App\World  $world
      * @return \Illuminate\Http\Response
      */
-    public function destroy(World $world)
+    public function destroy( $id)
     {
-        //
+        $world = World::where('id',$id)->first();
+        $world->delete();
+        $worlds = World::all();
+        
+        return view('world.world_index',compact('worlds'));
     }
 }
