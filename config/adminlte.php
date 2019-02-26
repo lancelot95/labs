@@ -145,8 +145,14 @@ return [
             'icon' => 'book',
         ],
         [
-            'text' => 'BLOG-OST EDIT',
+        
+            'text' => 'BLOG-POST EDIT',
             'url'  => 'admin/settings',
+            'icon' => 'book',
+        ],    
+        [
+            'text' => 'CREER UN ARTICLE',
+            'url'  => 'article',
             'icon' => 'book',
         ],
         [

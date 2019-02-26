@@ -14,60 +14,62 @@
 					<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
-							<img src="img/blog/blog-2.jpg" alt="">
+							<img src="{{$articles[0]->img}}" alt="">
 							<div class="post-date">
 								<h2>03</h2>
 								<h3>Nov 2017</h3>
 							</div>
 						</div>
 						<div class="post-content">
-							<h2 class="post-title">Just a simple blog post</h2>
+							 
+						<h2 class="post-title">{{$articles[0]->titre}}</h2>
 							<div class="post-meta">
 								<a href="">Loredana Papp</a>
 								<a href="">Design, Inspiration</a>
 								<a href="">2 Comments</a>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
-							<a href="{{asset('blog-post')}}" class="read-more">Read More</a>
+                            <p>{{str_limit($articles[0]->texte, 300)}}</p>
+						
+						<a href="{{asset('blog-post')}}" class="read-more">Read Moreaaa</a>
 						</div>
 					</div>
 					<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
-							<img src="img/blog/blog-1.jpg" alt="">
+							<img src="{{$articles[1]->img}}" alt="">
 							<div class="post-date">
 								<h2>03</h2>
 								<h3>Nov 2017</h3>
 							</div>
 						</div>
 						<div class="post-content">
-							<h2 class="post-title">Just a simple blog post</h2>
-							<div class="post-meta">
-								<a href="">Loredana Papp</a>
-								<a href="">Design, Inspiration</a>
-								<a href="">2 Comments</a>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
+								<h2 class="post-title">{{$articles[1]->titre}}</h2>
+								<div class="post-meta">
+									<a href="">Loredana Papp</a>
+									<a href="">Design, Inspiration</a>
+									<a href="">2 Comments</a>
+								</div>
+								<p>{{str_limit($articles[1]->texte, 300)}}</p>
 							<a href="blog-post.html" class="read-more">Read More</a>
 						</div>
 					</div>
 					<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
-							<img src="img/blog/blog-3.jpg" alt="">
+							<img src="{{$articles[2]->img}}" alt="">
 							<div class="post-date">
 								<h2>03</h2>
 								<h3>Nov 2017</h3>
 							</div>
 						</div>
 						<div class="post-content">
-							<h2 class="post-title">Just a simple blog post</h2>
-							<div class="post-meta">
-								<a href="">Loredana Papp</a>
-								<a href="">Design, Inspiration</a>
-								<a href="">2 Comments</a>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
+								<h2 class="post-title">{{$articles[2]->titre}}</h2>
+								<div class="post-meta">
+									<a href="">Loredana Papp</a>
+									<a href="">Design, Inspiration</a>
+									<a href="">2 Comments</a>
+								</div>
+								<p>{{str_limit($articles[2]->texte, 300)}}</p>
 							<a href="blog-post.html" class="read-more">Read More</a>
 						</div>
 					</div>

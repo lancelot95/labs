@@ -28,6 +28,7 @@ Route::resource('/acceuiladmin','AcceuiladminController');
 Route::resource('/testimonialsadmin','TestimonialsadminController');
 Route::resource('/worldadmin','WorldController');
 Route::resource('/projectadmin','ProjectController');
+Route::resource('/article','ArticleController');
 
 Route::get('/mail',function () {
     return view('mailform'); 

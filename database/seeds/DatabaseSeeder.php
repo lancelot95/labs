@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
          $this->call(WorldsTableSeeder::class);
          $this->call(CarouselsTableSeeder::class);
          $this->call(ContactsTableSeeder::class);
+         $this->call(InstagramsTableSeeder::class);
+         $this->call(TitresTableSeeder::class);
+         $this->call(ArticlesTableSeeder::class);
     }
 }

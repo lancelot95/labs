@@ -1,5 +1,5 @@
 <div class="widget-item">
-        <h2 class="widget-title">Categories</h2>
+        <h2 class="widget-title">{{$titres[0]->titre}}</h2>
         <ul>
             <li><a href="#">Vestibulum maximus</a></li>
             <li><a href="#">Nisi eu lobortis pharetra</a></li>

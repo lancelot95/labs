@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Acceuil;
+use App\Instagram;
+use App\Titre;
+use App\Article;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -16,7 +19,10 @@ class BlogController extends Controller
     public function index()
     {
         $acceuils = Acceuil::all()->first();
-        return view('blog',compact('acceuils'));
+        $instagrams = Instagram::all();
+        $titres = Titre::all();
+        $articles = Article::all();
+        return view('blog',compact('acceuils','instagrams','titres','articles'));
     }
 
     /**
