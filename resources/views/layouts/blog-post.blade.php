@@ -14,11 +14,11 @@
                     <div class="post-content">
                             @foreach ($articles as $item)
                             <h2 class="post-title">{{$item->titre}}</h2>
-                                <div class="post-meta">
+                                {{-- <div class="post-meta">
                                     <a href="">Loredana Papp</a>
                                     <a href="">Design, Inspiration</a>
                                     <a href="">2 Comments</a>
-                                </div>
+                                </div> --}}
                             <p>{{$item->texte}}</p>    
                     </div>
                     <!-- Post Author -->
