@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\tag;
+use App\Alessio;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreArticle;
 
 class ArticleController extends Controller
 {
@@ -14,8 +17,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all()->take(3);
-        return view('article.article_index',compact('articles'));
+        $articles = Article::all();
+        $tags = Tag::all();
+        return view('article.article_index',compact('articles','tags'));
     }
 
     /**
@@ -25,7 +29,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $tags = Tag::all();
+        return view('article.article_create',compact('articles','tags'));
     }
 
     /**
@@ -36,7 +41,17 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newarticle = new Article;
+        $newarticle->img = $request->img;
+        $newarticle->titre =$request->titre;
+        $newarticle->texte =$request->texte;
+        $newarticle->tag_id =$request->tag_id;
+        $newarticle->update();
+        // dd($request);
+        $articles = Article::all();
+        $tag = Tag::all();
+        // dd($articles);
+        return view('article.article_index',compact('articles','tags'));
     }
 
     /**
@@ -47,7 +62,9 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view('article.article_show',compact('article'));
+         $tags = Tag::all();
+        
+        return view('article.article_show',compact('article','tags'));
     }
 
     /**
@@ -58,7 +75,8 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        $test = Article::first();
+        return view('article.article_edit',compact("article","test"));
     }
 
     /**
@@ -70,7 +88,14 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $article = Article::first();
+        $article->img = $request->img;
+        $article->titre = $request ->titre;
+        $article->texte = $request->texte;
+        $article->save();
+        $articles = Article::all();
+
+        return view('article.article_index',compact('articles'));
     }
 
     /**
@@ -79,8 +104,12 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy($id)
     {
-        //
+        $article = Article::where('id',$id)->first();
+        $article->delete();
+        $articles = Article::all();
+        
+        return view('article.article_index',compact('articles'));
     }
 }

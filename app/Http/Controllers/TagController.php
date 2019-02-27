@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use Illuminate\Http\Request;
-use App\acceuil;
-use App\instagram;
-use App\titre;
-use App\Article;
-class BlogpostController extends Controller
+
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +14,7 @@ class BlogpostController extends Controller
      */
     public function index()
     {
-        $acceuils = Acceuil::all()->first();
-        $instagrams = Instagram::all();
-        $titres = Titre::all();
-        $articles = Article::all();
-        return view('blog-post',compact('acceuils','instagrams','titres','articles'));
-       
+        //
     }
 
     /**
@@ -48,10 +41,10 @@ class BlogpostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Tag $tag)
     {
         //
     }
@@ -59,10 +52,10 @@ class BlogpostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Tag $tag)
     {
         //
     }
@@ -71,10 +64,10 @@ class BlogpostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tag $tag)
     {
         //
     }
@@ -82,10 +75,10 @@ class BlogpostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tag $tag)
     {
         //
     }

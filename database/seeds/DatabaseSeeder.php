@@ -24,5 +24,8 @@ class DatabaseSeeder extends Seeder
          $this->call(InstagramsTableSeeder::class);
          $this->call(TitresTableSeeder::class);
          $this->call(ArticlesTableSeeder::class);
+         $this->call(CategoriesTableSeeder::class);
+         $this->call(TagsTableSeeder::class);
+         $this->call(AlessiosTableSeeder::class);
     }
 }

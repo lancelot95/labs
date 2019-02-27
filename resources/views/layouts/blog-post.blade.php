@@ -4,25 +4,25 @@
             <div class="col-md-8 col-sm-7 blog-posts">
                 <!-- Single Post -->
                 <div class="single-post">
-                    <div class="post-thumbnail">
-                        <img src="img/blog/blog-1.jpg" alt="">
-                        <div class="post-date">
-                            <h2>03</h2>
-                            <h3>Nov 2017</h3>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                            @foreach ($articles as $item)
-                            <h2 class="post-title">{{$item->titre}}</h2>
-                                {{-- <div class="post-meta">
+                        <div class="post-thumbnail">
+                                <img src="{{$article->img}}" alt="">
+                                <div class="post-date">
+                                    <h2>03</h2>
+                                    <h3>Nov 2017</h3>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                 
+                            <h2 class="post-title">{{$article->titre}}</h2>
+                                <div class="post-meta">
                                     <a href="">Loredana Papp</a>
                                     <a href="">Design, Inspiration</a>
                                     <a href="">2 Comments</a>
-                                </div> --}}
-                            <p>{{$item->texte}}</p>    
-                    </div>
+                                </div>
+                                <p>{{$article->texte}}</p>
+                            </div>
                     <!-- Post Author -->
-                    <div class="author">
+                    {{-- <div class="author">
                         <div class="avatar">
                             <img src="img/avatar/03.jpg" alt="">
                         </div>
@@ -30,8 +30,8 @@
                             <h2>{{$item->nom}} <span>Author</span></h2>
                         <p>{{$item->description}}</p>
                         </div>
-                        @endforeach
-                    </div>
+                       
+                    </div> --}}
                     <!-- Post Comments -->
                     <div class="comments">
                         <h2>Comments (2)</h2>

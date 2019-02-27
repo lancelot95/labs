@@ -2,17 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
-use App\Acceuil;
-use App\Instagram;
-use App\Titre;
-use App\Article;
-use App\blogpost;
-use App\categorie;
-use App\tag;
+use App\Alessio;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class AlessioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,13 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $acceuils = Acceuil::all()->first();
-        $instagrams = Instagram::all();
-        $titres = Titre::all();
-        $articles = Article::all();
-        $categories = Categorie::all();
-        $tags = Tag::all();
-        return view('blog',compact('acceuils','instagrams','titres','articles','categories','tags'));
+        //
     }
 
     /**
@@ -54,28 +41,21 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Alessio  $alessio
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {   
-        
-        $article = Article::where('id',$id)->first();
-        $titres = Titre::all();
-        $instagrams = Instagram::all();
-        $acceuils = Acceuil::all()->first();
-        $categories = Categorie::all();
-        $tags = Tag::all();
-        return view('blog-post',compact('article','titres','instagrams','acceuils','categories','tags'));
+    public function show(Alessio $alessio)
+    {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Alessio  $alessio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Alessio $alessio)
     {
         //
     }
@@ -84,10 +64,10 @@ class BlogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Blog  $blog
+     * @param  \App\Alessio  $alessio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Alessio $alessio)
     {
         //
     }
@@ -95,10 +75,10 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Alessio  $alessio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy(Alessio $alessio)
     {
         //
     }

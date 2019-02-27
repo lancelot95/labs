@@ -10,75 +10,41 @@
 	<div class="page-section spad">
 		<div class="container">
 			<div class="row">
+				
 				<div class="col-md-8 col-sm-7 blog-posts">
+					@foreach ($articles as $item)
 					<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
-							<img src="{{$articles[0]->img}}" alt="">
+							<img src="{{$item->img}}" alt="">
 							<div class="post-date">
 								<h2>03</h2>
 								<h3>Nov 2017</h3>
 							</div>
 						</div>
 						<div class="post-content">
-							 
-						<h2 class="post-title">{{$articles[0]->titre}}</h2>
+							
+							<h2 class="post-title">{{$item->titre}}</h2>
 							<div class="post-meta">
-								<a href="">Loredana Papp</a>
-								<a href="">Design, Inspiration</a>
-								<a href="">2 Comments</a>
-							</div>
-                            <p>{{str_limit($articles[0]->texte, 300)}}</p>
+							 @foreach ($tags as $tag)
+									<a href="">{{$tag->hashtags}}</a>&nbsp;
+									
+									@endforeach
+								</div>
+								<div class="post-meta">
+									<a href="">Loredana Papp</a>
+									<a href="">2 Comments</a>
+								</div>
+                            <p>{{str_limit($item->texte, 300)}}</p>
+							
 						
-						<a href="{{asset('blog-post')}}" class="read-more">Read Moreaaa</a>
+							<a class="read-more" href="{{route('blog.show',['id'=>$item->id])}}">Read more</a> 
 						</div>
 					</div>
-					<!-- Post item -->
-					<div class="post-item">
-						<div class="post-thumbnail">
-							<img src="{{$articles[1]->img}}" alt="">
-							<div class="post-date">
-								<h2>03</h2>
-								<h3>Nov 2017</h3>
-							</div>
-						</div>
-						<div class="post-content">
-								<h2 class="post-title">{{$articles[1]->titre}}</h2>
-								<div class="post-meta">
-									<a href="">Loredana Papp</a>
-									<a href="">Design, Inspiration</a>
-									<a href="">2 Comments</a>
-								</div>
-								<p>{{str_limit($articles[1]->texte, 300)}}</p>
-							<a href="blog-post.html" class="read-more">Read More</a>
-						</div>
-					</div>
-					<!-- Post item -->
-					<div class="post-item">
-						<div class="post-thumbnail">
-							<img src="{{$articles[2]->img}}" alt="">
-							<div class="post-date">
-								<h2>03</h2>
-								<h3>Nov 2017</h3>
-							</div>
-						</div>
-						<div class="post-content">
-								<h2 class="post-title">{{$articles[2]->titre}}</h2>
-								<div class="post-meta">
-									<a href="">Loredana Papp</a>
-									<a href="">Design, Inspiration</a>
-									<a href="">2 Comments</a>
-								</div>
-								<p>{{str_limit($articles[2]->texte, 300)}}</p>
-							<a href="blog-post.html" class="read-more">Read More</a>
-						</div>
-					</div>
+					
 					<!-- Pagination -->
-					<div class="page-pagination">
-						<a class="active" href="">01.</a>
-						<a href="">02.</a>
-						<a href="">03.</a>
-					</div>
+				
+					@endforeach
 				</div>
 				<!-- Sidebar area -->
 				<div class="col-md-4 col-sm-5 sidebar">
