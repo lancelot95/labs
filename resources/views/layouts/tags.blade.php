@@ -3,7 +3,8 @@
         <ul class="tag">
             @foreach ($tags as $item)
                 
-            <li><a href="">{{$item->hashtags}}</a></li>
+            <li><a href="{{route('tag.show',['id'=>$item->id])}}">{{$item->hashtags}}</a></li>
+            
             @endforeach
             
         </ul>

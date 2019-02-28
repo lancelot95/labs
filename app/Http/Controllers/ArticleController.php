@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\tag;
 use App\Alessio;
+use App\categorie;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreArticle;
 
@@ -19,7 +20,8 @@ class ArticleController extends Controller
     {
         $articles = Article::all();
         $tags = Tag::all();
-        return view('article.article_index',compact('articles','tags'));
+        $categories = Categorie::all();
+        return view('article.article_index',compact('articles','tags','categories'));
     }
 
     /**
@@ -30,7 +32,8 @@ class ArticleController extends Controller
     public function create()
     {
         $tags = Tag::all();
-        return view('article.article_create',compact('articles','tags'));
+        $categories = Categorie::all();
+        return view('article.article_create',compact('articles','tags','categories'));
     }
 
     /**
@@ -42,16 +45,20 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $newarticle = new Article;
+        $newalessio = new Alessio;
+        $newtag = new Tag;
         $newarticle->img = $request->img;
         $newarticle->titre =$request->titre;
         $newarticle->texte =$request->texte;
-        $newarticle->tag_id =$request->tag_id;
-        $newarticle->update();
-        // dd($request);
+        $newarticle->categorie_id =$request->categorie_id;
+        $newarticle->save();
+        $tag = Tag::find($request->tags);
+        $newarticle->tag()->attach($tag);
+        //  dd($tag);
         $articles = Article::all();
-        $tag = Tag::all();
-        // dd($articles);
+        $tags = Tag::all();
         return view('article.article_index',compact('articles','tags'));
+       
     }
 
     /**
@@ -60,10 +67,10 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show($id)
     {
-         $tag = Tag::all();
-        
+         $tag = Tag::where('id',$id)->first();
+         $article = Article::where('id', $id)->first();
         return view('article.article_show',compact('article','tag'));
     }
 
@@ -73,11 +80,14 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit($id)
     {
-        $test = Article::first();
-        $tag = Tag::all(); 
-        return view('article.article_edit',compact("article","test","tag"));
+       
+        $test = Article::find($id);
+         $tags = Tag::all();
+
+        // $article = Article::first();
+        return view('article.article_edit',compact("test","tags"));
     }
 
     /**
@@ -89,13 +99,15 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        $article = Article::first();
         $article->img = $request->img;
         $article->titre = $request ->titre;
         $article->texte = $request->texte;
         $article->save();
-        $tag = Tag::first();
-        $tag->hashtags = $request->hashtags;
+        $tag = Tag::all();
+        $article->tag()->detach($tag);
+        $tag = Tag::find($request->tags);
+        $article->tag()->attach($tag);
+        $article->save();
         $articles = Article::all();
         $tags = Tag::all();
 

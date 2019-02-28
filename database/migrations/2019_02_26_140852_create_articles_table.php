@@ -18,10 +18,12 @@ class CreateArticlesTable extends Migration
             $table->string('img');
             $table->string('titre');
             $table->longText('texte');
-            $table->string('nom');
-            $table->string('fonction');
-            $table->string('description');
-            $table->string('image');
+            $table->unsignedInteger('categorie_id');
+            $table->foreign('categorie_id')->references('id')->on('categories');
+            // $table->string('nom');
+            // $table->string('fonction');
+            // $table->string('description');
+            // $table->string('image');
             $table->timestamps();
         });
     }

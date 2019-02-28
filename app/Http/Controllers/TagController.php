@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Tag;
 use Illuminate\Http\Request;
-
+use App\Article;
+use App\Acceuil;
+use App\Titre;
 class TagController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -46,7 +48,13 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        //
+        $articles = $tag->articles; // array
+        $titres = Titre::all();
+        $acceuils = Acceuil::all()->first();
+        $tags = Tag::all();
+        // dd($articles);
+       
+        return view('tag',compact('articles','titres','instagrams','acceuils','categories','tags', 'tag'));
     }
 
     /**

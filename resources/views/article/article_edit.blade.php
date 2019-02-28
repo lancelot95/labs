@@ -28,11 +28,12 @@
     <small id="helpId" class="text-muted">Help text</small>
      
 </div>
-<select name="alessio_id">
-        @foreach ($tag as $item)
-<option value="{{$item->id}}">{{$item->hashtags}}</option>
-        @endforeach
-</select>
+@foreach ($tags as $tag)
+<div>
+      <input type="checkbox" id="" name="tags[]" value="{{$tag->id}}">
+      <label>{{$tag->hashtags}}</label>
+</div>
+@endforeach
 
 <button class="btn btn-danger" type="submit">
         UPDATE

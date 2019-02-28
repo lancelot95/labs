@@ -1,16 +1,15 @@
 <!-- Page Preloder -->
-<div id="preloder">
+{{-- <div id="preloder">
 		<div class="loader">
 			<img src="img/logo.png" alt="">
 			<h2>Loading.....</h2>
 		</div>
-	</div>
+	</div> --}}
 
 	<!-- page section -->
 	<div class="page-section spad">
 		<div class="container">
 			<div class="row">
-				
 				<div class="col-md-8 col-sm-7 blog-posts">
 					@foreach ($articles as $item)
 					<!-- Post item -->
@@ -50,15 +49,15 @@
 				<!-- Sidebar area -->
 				<div class="col-md-4 col-sm-5 sidebar">
 					{{-- intégration filtre --}}
-					@include('layouts.filtre')
+					{{-- @include('layouts.filtre') --}}
 					{{-- fin intégration filtre --}}
 
 					{{-- intégration categorie --}}
-					@include('layouts.categorie')
+					{{-- @include('layouts.categorie') --}}
 					{{-- fin intégration categorie --}}
 
 					{{-- intégration instagram --}}
-					@include('layouts.instagram')
+					{{-- @include('layouts.instagram') --}}
 					{{-- fin intégration instagram --}}
 
 					{{-- intégration tags --}}

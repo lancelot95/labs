@@ -49,11 +49,23 @@
             @endif --}}
             <textarea class="form-control{{$errors-> has('name')?'border-danger':''}}" name="texte" id="" rows="3" value="{{old('name')}}"></textarea>
       </div>
-      <select name="alessio_id">
-                  @foreach ($tags as $item)
-      <option value="{{$item->id}}">{{$item->hashtags}}</option>
-                  @endforeach
-      </select>
+            <p>Choisis teazers tags:</p>
+      
+      @foreach ($tags as $tag)
+      <div>
+            <input type="checkbox" id="" name="tags[]" value="{{$tag->id}}">
+            <label>{{$tag->hashtags}}</label>
+      </div>
+      @endforeach
+      <p>Choisis tes catégories:</p>
+      @foreach ($categories as $categorie)
+      <div>
+            <input type="checkbox" id="" name="" value="{{$categorie->id}}">
+            <label>{{$categorie->theme}}</label>
+      </div>
+      @endforeach
+
+      
 
 
       <button class="btn-warning" type="submit">Submit</button>
