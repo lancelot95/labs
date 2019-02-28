@@ -62,9 +62,9 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-         $tags = Tag::all();
+         $tag = Tag::all();
         
-        return view('article.article_show',compact('article','tags'));
+        return view('article.article_show',compact('article','tag'));
     }
 
     /**
@@ -76,7 +76,8 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         $test = Article::first();
-        return view('article.article_edit',compact("article","test"));
+        $tag = Tag::all(); 
+        return view('article.article_edit',compact("article","test","tag"));
     }
 
     /**
@@ -93,9 +94,12 @@ class ArticleController extends Controller
         $article->titre = $request ->titre;
         $article->texte = $request->texte;
         $article->save();
+        $tag = Tag::first();
+        $tag->hashtags = $request->hashtags;
         $articles = Article::all();
+        $tags = Tag::all();
 
-        return view('article.article_index',compact('articles'));
+        return view('article.article_index',compact('articles','tags'));
     }
 
     /**

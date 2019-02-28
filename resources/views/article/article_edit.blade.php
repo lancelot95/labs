@@ -26,10 +26,13 @@
     <label for="">Image</label>
     <input type="text" name="img" id="" class="form-control" value="{{$test->img}}" aria-describedby="helpId">
     <small id="helpId" class="text-muted">Help text</small>
-     <select name="" id="">
-         
-     </select>
+     
 </div>
+<select name="alessio_id">
+        @foreach ($tag as $item)
+<option value="{{$item->id}}">{{$item->hashtags}}</option>
+        @endforeach
+</select>
 
 <button class="btn btn-danger" type="submit">
         UPDATE
