@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Tag;
-use Illuminate\Http\Request;
 use App\Article;
 use App\Acceuil;
 use App\Titre;
+use App\Categorie;
+use Illuminate\Http\Request;
 class TagController extends Controller
 {
     /**
@@ -52,9 +53,10 @@ class TagController extends Controller
         $titres = Titre::all();
         $acceuils = Acceuil::all()->first();
         $tags = Tag::all();
+        $categories = Categorie::all();
         // dd($articles);
        
-        return view('tag',compact('articles','titres','instagrams','acceuils','categories','tags', 'tag'));
+        return view('tag',compact('articles','titres','instagrams','acceuils','categories','categorie','tags','tag'));
     }
 
     /**

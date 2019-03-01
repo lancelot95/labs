@@ -25,16 +25,17 @@
 							
 							<h2 class="post-title">{{$item->titre}}</h2>
 							<div class="post-meta">
-									@foreach ($item->tag as $tag)
+								@foreach ($item->tag as $tag)
                             
-									<a href="">{{$tag->hashtags}}</a>&nbsp;
+								<a href="">{{$tag->hashtags}}</a>&nbsp;
 									
-									@endforeach
-								</div>
-								<div class="post-meta">
-									<a href="">Loredana Papp</a>
+								@endforeach
+								@foreach ($categories as $categorie)
+									
+								<a href="">{{$categorie->theme}}</a>&nbsp;
+								@endforeach
 									<a href="">2 Comments</a>
-								</div>
+							</div>
                             <p>{{str_limit($item->texte, 300)}}</p>
 							
 						
@@ -53,7 +54,7 @@
 					{{-- fin intégration filtre --}}
 
 					{{-- intégration categorie --}}
-					{{-- @include('layouts.categorie') --}}
+					@include('layouts.categorie')
 					{{-- fin intégration categorie --}}
 
 					{{-- intégration instagram --}}

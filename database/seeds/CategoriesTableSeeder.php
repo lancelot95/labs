@@ -15,7 +15,7 @@ class CategoriesTableSeeder extends Seeder
             'theme'=>'Start-up'
         ]);
         DB::table('categories')->insert([
-            'theme'=>'Technologies'
+            'theme'=>'Ecologie'
         ]);
         DB::table('categories')->insert([
             'theme'=>'International'

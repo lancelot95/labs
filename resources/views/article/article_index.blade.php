@@ -24,21 +24,20 @@
                     </div>
                     <div class="post-content">
                          
-                    <h2 class="post-title">{{$item->titre}}</h2>
-                    <div class="post-meta">
-                        @foreach ($item->tag as $tag)
-                            
-                            <a href="">{{$tag->hashtags}}</a>&nbsp;
+                        <h2 class="post-title">{{$item->titre}}</h2>
+                        <div class="post-meta">
                         
-                        @endforeach
-                    </div>
-                    {{-- <div class="post-meta">
-                            @foreach ($item->categorie as $categorie)
-                                
-                            <a href="">{{$categorie->theme}}</a>&nbsp;
-                            
+                            <a href="">{{$item->categories->theme}}</a>&nbsp;
+                        
+                        
+                        
+                            @foreach ($item->tag as $tag)
+                                        
+                                <a href="">{{$tag->hashtags}}</a>&nbsp;
+                                    
                             @endforeach
-                    </div> --}}
+                        </div>
+                   
                         {{-- <div class="post-meta">
                            
                             <a href="">Design, Inspiration</a>

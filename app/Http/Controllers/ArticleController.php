@@ -33,7 +33,7 @@ class ArticleController extends Controller
     {
         $tags = Tag::all();
         $categories = Categorie::all();
-        return view('article.article_create',compact('articles','tags','categories'));
+        return view('article.article_create',compact('tags','categories'));
     }
 
     /**
@@ -50,6 +50,7 @@ class ArticleController extends Controller
         $newarticle->img = $request->img;
         $newarticle->titre =$request->titre;
         $newarticle->texte =$request->texte;
+        $newarticle->categorie_id =$request->categorie_id;
         $newarticle->save();
         $tag = Tag::find($request->tags);
         $newarticle->tag()->attach($tag);
@@ -101,7 +102,6 @@ class ArticleController extends Controller
         $article->img = $request->img;
         $article->titre = $request ->titre;
         $article->texte = $request->texte;
-        $article->save();
         $tag = Tag::all();
         $article->tag()->detach($tag);
         $tag = Tag::find($request->tags);

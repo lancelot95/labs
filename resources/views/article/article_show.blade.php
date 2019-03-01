@@ -24,16 +24,10 @@
                          
                     <h2 class="post-title">{{$article->titre}}</h2>
                     <div class="post-meta">
-                   
                         <a href="">{{$tag->hashtags}}</a>&nbsp;
                     
-                  
+                        <a href="">2 Comments</a>
                     </div>
-                        <div class="post-meta">
-                            
-                            <a href="">Design, Inspiration</a>
-                            <a href="">2 Comments</a>
-                        </div>
                         <p>{{$article->texte}}</p>
                     </div>
                 </div>    

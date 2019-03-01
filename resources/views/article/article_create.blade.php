@@ -55,15 +55,19 @@
       <div>
             <input type="checkbox" id="" name="tags[]" value="{{$tag->id}}">
             <label>{{$tag->hashtags}}</label>
+
       </div>
        @endforeach
-      {{-- <p>Choisis tes catégories:</p>
+
+      <p>Choisis tes catégories:</p>
       @foreach ($categories as $categorie)
       <div>
-            <input type="checkbox" id="" name="" value="{{$categorie->id}}">
+            <input type="checkbox" id="" name="categorie_id" value="{{$categorie->id}}">
             <label>{{$categorie->theme}}</label>
       </div>
-      @endforeach --}} 
+      @endforeach
+
+           
 
       
 

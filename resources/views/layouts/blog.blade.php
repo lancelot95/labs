@@ -31,11 +31,15 @@
 									<a href="">{{$tag->hashtags}}</a>&nbsp;
 									
 									@endforeach
-								</div>
-								<div class="post-meta">
-									<a href="">Loredana Papp</a>
+							
+							
+									<a href="">{{$item->categories->theme}}</a>&nbsp;
+								
+							</div>
+								{{-- <div class="post-meta">
+									
 									<a href="">2 Comments</a>
-								</div>
+								</div> --}}
                             <p>{{str_limit($item->texte, 300)}}</p>
 							
 						

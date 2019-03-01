@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Categorie;
+use App\Article;
+use App\Acceuil;
+use App\Titre;
 use Illuminate\Http\Request;
 
 class CategorieController extends Controller
@@ -46,7 +49,13 @@ class CategorieController extends Controller
      */
     public function show(Categorie $categorie)
     {
-        //
+        $articles = $tag->articles; // array
+        $titres = Titre::all();
+        $acceuils = Acceuil::all()->first();
+        $categories = Categories::all();
+        // dd($articles);
+       
+        return view('tag',compact('articles','titres','instagrams','acceuils','categories','categorie','tags', 'tag'));
     }
 
     /**
