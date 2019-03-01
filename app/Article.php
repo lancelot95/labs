@@ -11,8 +11,8 @@ class Article extends Model
     {
         return $this->belongsToMany('App\Tag','alessios');
     }
-    public function categories()
-    {
-        return $this->belongsToMany('App\Categorie');
-    }
+    // public function categories()
+    // {
+    //     return $this->belongsToMany('App\Categorie');
+    // }
 }

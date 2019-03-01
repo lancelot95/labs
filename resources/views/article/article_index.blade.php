@@ -28,17 +28,17 @@
                     <div class="post-meta">
                         @foreach ($item->tag as $tag)
                             
-                        <a href="">{{$tag->hashtags}}</a>&nbsp;
+                            <a href="">{{$tag->hashtags}}</a>&nbsp;
                         
                         @endforeach
                     </div>
-                    <div class="post-meta">
+                    {{-- <div class="post-meta">
                             @foreach ($item->categorie as $categorie)
                                 
                             <a href="">{{$categorie->theme}}</a>&nbsp;
                             
                             @endforeach
-                    </div>
+                    </div> --}}
                         {{-- <div class="post-meta">
                            
                             <a href="">Design, Inspiration</a>

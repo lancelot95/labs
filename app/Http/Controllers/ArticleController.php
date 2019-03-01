@@ -50,7 +50,6 @@ class ArticleController extends Controller
         $newarticle->img = $request->img;
         $newarticle->titre =$request->titre;
         $newarticle->texte =$request->texte;
-        $newarticle->categorie_id =$request->categorie_id;
         $newarticle->save();
         $tag = Tag::find($request->tags);
         $newarticle->tag()->attach($tag);
