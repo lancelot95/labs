@@ -64,10 +64,12 @@ class BlogController extends Controller
         $titres = Titre::all();
         $instagrams = Instagram::all();
         $acceuils = Acceuil::all()->first();
+        // $categorie = Categorie::where('id',$id)->first();
+        $categories = Categorie::all();
+        $tags = Tag::all();
+        $tag = Tag::where('id',$id)->first();
         $categorie = Categorie::where('id',$id)->first();
-        // $categories = Categorie::all();
-         $tag = Tag::where('id',$id)->first();
-        return view('blog-post',compact('article','titres','instagrams','acceuils','categorie','tag'));
+        return view('blog-post',compact('article','titres','instagrams','acceuils','categorie','tag', 'tags', 'categories'));
     }
 
     /**

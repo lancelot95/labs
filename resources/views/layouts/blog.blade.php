@@ -26,7 +26,7 @@
 							
 							<h2 class="post-title">{{$item->titre}}</h2>
 							<div class="post-meta">
-									@foreach ($item->tag as $tag)
+									@foreach ($item->tags as $tag)
                             
 									<a href="">{{$tag->hashtags}}</a>&nbsp;
 									

@@ -29,6 +29,7 @@
                                         @foreach ($article->tags as $tag)
                                             <a href="">{{$tag->hashtags}}</a>&nbsp;
                                         @endforeach
+                                        
                                         -&nbsp;
                                         <a href="">{{$categorie->theme}}</a>&nbsp;-&nbsp;
                                         <a href="">2 Comments</a>

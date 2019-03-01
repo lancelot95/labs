@@ -25,15 +25,13 @@
 							
 							<h2 class="post-title">{{$item->titre}}</h2>
 							<div class="post-meta">
-								@foreach ($item->tag as $tag)
+								@foreach ($item->tags as $tag)
                             
 								<a href="">{{$tag->hashtags}}</a>&nbsp;
 									
 								@endforeach
-								@foreach ($categories as $categorie)
-									
-								<a href="">{{$categorie->theme}}</a>&nbsp;
-								@endforeach
+								
+								<a href="">{{$item->categories->theme}}</a>&nbsp;
 									<a href="">2 Comments</a>
 							</div>
                             <p>{{str_limit($item->texte, 300)}}</p>

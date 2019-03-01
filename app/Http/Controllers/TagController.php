@@ -49,6 +49,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
+
         $articles = $tag->articles; // array
         $titres = Titre::all();
         $acceuils = Acceuil::all()->first();
@@ -56,7 +57,7 @@ class TagController extends Controller
         $categories = Categorie::all();
         // dd($articles);
        
-        return view('tag',compact('articles','titres','instagrams','acceuils','categories','categorie','tags','tag'));
+        return view('tag',compact('articles','titres','instagrams','acceuils','categories','tags'));
     }
 
     /**

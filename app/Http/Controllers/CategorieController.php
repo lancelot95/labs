@@ -6,6 +6,7 @@ use App\Categorie;
 use App\Article;
 use App\Acceuil;
 use App\Titre;
+use App\tag;
 use Illuminate\Http\Request;
 
 class CategorieController extends Controller
@@ -47,15 +48,16 @@ class CategorieController extends Controller
      * @param  \App\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function show(Categorie $categorie)
+    public function show($cat)
     {
-        $articles = $tag->articles; // array
+        $cat = Categorie::where('id', $cat)->first();
+        $articles = $cat->articles; // array
         $titres = Titre::all();
         $acceuils = Acceuil::all()->first();
-        $categories = Categories::all();
-        // dd($articles);
-       
-        return view('tag',compact('articles','titres','instagrams','acceuils','categories','categorie','tags', 'tag'));
+        $categories = Categorie::all();
+        $tags = Tag::all();
+        // dd($cat);
+        return view('tag',compact('articles','titres','instagrams','acceuils','categories','tags'));
     }
 
     /**

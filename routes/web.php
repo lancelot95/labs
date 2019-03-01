@@ -20,7 +20,7 @@ Route::get('/home', 'HomeController@index');
 Route::resource('/service','ServiceController');
 Route::resource('/serviceadmin','ServiceadminController');
 Route::resource('/blog','BlogController');
-Route::resource('/blog-post','BlogpostController');
+// Route::resource('/blog-post','BlogpostController');
 Route::resource('/contact','ContactController');
 Route::resource('/carousel','CarouselController');
 Route::resource('/acceuil','AcceuilController');
@@ -30,6 +30,7 @@ Route::resource('/worldadmin','WorldController');
 Route::resource('/projectadmin','ProjectController');
 Route::resource('/article','ArticleController');
 Route::resource('/tag','TagController');
+Route::resource('/categorie','CategorieController');
 
 Route::get('/mail',function () {
     return view('mailform'); 
