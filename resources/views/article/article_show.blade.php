@@ -23,9 +23,13 @@
                     <div class="post-content">
                          
                     <h2 class="post-title">{{$article->titre}}</h2>
-                    <div class="post-meta">
-                        <a href="">{{$tag->hashtags}}</a>&nbsp;
                     
+                    <div class="post-meta">
+                        @foreach ($article->tags as $tag)
+                            <a href="">{{$tag->hashtags}}</a>&nbsp;
+                        @endforeach
+                        -&nbsp;
+                        <a href="">{{$categorie->theme}}</a>&nbsp;-&nbsp;
                         <a href="">2 Comments</a>
                     </div>
                         <p>{{$article->texte}}</p>

@@ -19,7 +19,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        $tags = Tag::all();
+         $tags = Tag::all();
         $categories = Categorie::all();
         return view('article.article_index',compact('articles','tags','categories'));
     }
@@ -53,7 +53,7 @@ class ArticleController extends Controller
         $newarticle->categorie_id =$request->categorie_id;
         $newarticle->save();
         $tag = Tag::find($request->tags);
-        $newarticle->tag()->attach($tag);
+        $newarticle->tags()->attach($tag);
         //  dd($tag);
         $articles = Article::all();
         $tags = Tag::all();
@@ -67,11 +67,12 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id) // article 
     {
-         $tag = Tag::where('id',$id)->first();
-         $article = Article::where('id', $id)->first();
-        return view('article.article_show',compact('article','tag'));
+        // $article = Article::where('id', $id)->first();
+        $article = Article::where('id', $id)->first();
+        $categorie = Categorie::where('id',$id)->first();
+        return view('article.article_show',compact('article','categorie'));
     }
 
     /**
@@ -84,7 +85,7 @@ class ArticleController extends Controller
     {
        
         $test = Article::find($id);
-         $tags = Tag::all();
+        $tags = Tag::all();
 
         // $article = Article::first();
         return view('article.article_edit',compact("test","tags"));
