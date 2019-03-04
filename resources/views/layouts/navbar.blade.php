@@ -1,7 +1,10 @@
 	<!-- Header section -->
 	<header class="header-section">
             <div class="logo">
-            <img src="{{$acceuils->logonavbar}}" alt=""><!-- Logo -->               
+                @foreach ($acceuils as $item)
+                    
+                <img src="{{$item->logonavbar}}" alt=""><!-- Logo -->               
+                @endforeach
             </div>
             <!-- Navigation -->
             <div class="responsive"><i class="fa fa-bars"></i></div>

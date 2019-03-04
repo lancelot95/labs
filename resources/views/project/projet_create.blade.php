@@ -27,7 +27,7 @@
 
     <div class="form-group">
         <label for="">Image</label>
-        <input type="text" class="form-control" name="image" id="" aria-describedby="helpId" value="">         
+        <input type="file" class="form-control" name="image" id="" aria-describedby="helpId" value="">         
     </div>
 
       <button class="btn-warning" type="submit">Submit</button>

@@ -20,6 +20,13 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\MailEvent'=> 
         ['App\Listeners\MailListener'],
+  
+    
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        'App\Events\NewsletterEvent'=> 
+        ['App\Listeners\NewsletterListener'],
     ];
 
     /**

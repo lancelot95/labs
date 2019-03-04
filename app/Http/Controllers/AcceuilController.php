@@ -9,6 +9,7 @@ use App\Team;
 use Illuminate\Http\Request;
 use App\Carousel;
 use App\Acceuiladmin;
+use App\Contact;
 class AcceuilController extends Controller
 {
     /**
@@ -23,10 +24,12 @@ class AcceuilController extends Controller
         $services = Service::take(9)->get();
         $services_r = Service::all()->random(3);
         $testimonials = Testimonial::all();
+        $contacts = Contact::all();
         $teams = Team::all();
+        $acceuils = Acceuil::all();
         
             //  dd($testimonials);
-        return view('welcome', compact('acceuils','services','services','services_r','testimonials','teams', 'carou'));
+        return view('welcome', compact('acceuils','services','services','services_r','testimonials','teams', 'carou','contacts','acceuils'));
     }
 
     /**

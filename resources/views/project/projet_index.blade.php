@@ -27,7 +27,7 @@
       <td scope="row">{{$item->id}}</td>
       <td>{{$item->titre}}</td>
       <td>{{$item->texte}}</td>
-      <td>{{$item->image}}</td>
+      <td><img src="{{asset($item->image)}}" height="100" width="100" alt=""></td>
       <td>
       <a class="btn btn bg-blue" href="{{route('projectadmin.edit',['projects'=>$item->id])}}">Editer</a>
       </td>

@@ -7,14 +7,17 @@
             <!-- contact info -->
             <div class="col-md-5 col-md-offset-1 contact-info col-push">
                 <div class="section-title left">
-                <h2>{{$acceuils->contactus}}</h2>
+                    @foreach ($contacts as $item)
+                        
+                    <h2>{{$item->contactus}}</h2>
                     
                 </div>
-            <p>{{$acceuils->texte}}</p>
-            <h3 class="mt60">{{$acceuils->mainoffice}}</h3>
-                <p class="con-item">{{$acceuils->addresse}} </p>
-            <p class="con-item">{{$acceuils->phone}}</p>
-            <p class="con-item">{{$acceuils->email}}</p>
+                <p>{{$item->texte}}</p>
+                <h3 class="mt60">{{$item->mainoffice}}</h3>
+                <p class="con-item">{{$item->addresse}} </p>
+                <p class="con-item">{{$item->phone}}</p>
+                <p class="con-item">{{$item->email}}</p>
+                @endforeach
             </div>
             <!-- contact form -->
             

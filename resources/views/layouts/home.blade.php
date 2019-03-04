@@ -11,9 +11,12 @@
         <div class="hero-section">
             <div class="hero-content">
                 <div class="hero-center">
-                <img src="{{$acceuils->biglogo}}"  alt="">   
-
-                        <p>{{$acceuils->titrecarousel}}</p>
+                    @foreach ($acceuils as $item)
+                        
+                        <img src="{{$item->biglogo}}"  alt="">   
+                    
+                        <p>{{$item->titrecarousel}}</p>
+                    @endforeach
                 </div>
             </div>
             <!-- slider -->
@@ -58,23 +61,30 @@
             <div class="about-contant">
                 <div class="container">
                     <div class="section-title">
+                            @foreach ($acceuils as $item)
+                            
+                            <h2>{{$item->titrelabsworld}}
 
-                    <h2>{{$acceuils->titrelabsworld}}
+                            <span>{{$item->titrevertworld}}</span>
 
-                    <span>{{$acceuils->titrevertworld}}</span>
+                            {{$item->titreword}}</h2>
+                       
 
-                    {{$acceuils->titreword}}</h2>
-
-                        
-                    </div>
+                            @endforeach 
+                        </div>
                     <div class="row">
+                        @foreach ($acceuils as $item)
                         <div class="col-md-6">
-                        <p>{{$acceuils->textelabsworld}}</p>
+                                
+                           
+                        <p>{{$item->textelabsworld}}</p>
                         </div>
                         <div class="col-md-6">
-                        <p>{{$acceuils->textelabsworld}}</p>
+                        <p>{{$item->textelabsworld}}</p>
                         </div>
+                        @endforeach
                     </div>
+                   
                     <div class="text-center mt60">
                     <a href="{{asset('blog')}}" class="site-btn">Browse</a>
                     </div>
@@ -102,9 +112,12 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-4">
                         <div class="section-title left">
-                            <h2>{{$acceuils->titrelabsworld}}
-                            <span>{{$acceuils->titrevertworld}}</span>
-                            {{$acceuils->titreclient}}</h2>
+                            @foreach ($acceuils as $item)
+                                <h2>{{$item->titrelabsworld}}
+                                    <span>{{$item->titrevertworld}}</span>
+                                    {{$item->titreclient}}</h2>
+                            @endforeach
+                           
                         </div>
                         <div class="owl-carousel" id="testimonial-slide">
                             <!-- single testimonial -->
@@ -139,9 +152,12 @@
             <div class="overlay"></div>
             <div class="container">
                 <div class="section-title">
-                    <h2>{{$acceuils->titrelabsworld}}
-                    <span>{{$acceuils->titrevertworld}}</span>
-                    {{$acceuils->titreteam}}</h2>
+                    @foreach ($acceuils as $item)
+                        
+                    <h2>{{$item->titrelabsworld}}
+                    <span>{{$item->titrevertworld}}</span>
+                    {{$item->titreteam}}</h2>
+                    @endforeach
                    
                 </div>
                 <div class="row">
@@ -165,8 +181,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                    <h2>{{$acceuils->titrestandout}}</h2>
-                        <p>{{$acceuils->textestandout}}</p>
+                        @foreach ($acceuils as $item)
+                            
+                        <h2>{{$item->titrestandout}}</h2>
+                        <p>{{$item->textestandout}}</p>
+                        @endforeach
                         <a class="btn btn bg-blue text-danger" href="">Editer titre & description</a>
                     </div>
                     <div class="col-md-3">

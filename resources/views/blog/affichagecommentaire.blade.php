@@ -10,20 +10,7 @@
 
 @section('content')
 
-<div>
-  <input type="checkbox" id="scales" name="scales"
-         checked>
-  <label for="scales">encours de validation</label>
-</div>
 
-<div>
-  <input type="checkbox" id="horns" name="horns">
-  <label for="horns">valider</label>
-</div>
-<div>
-        <input type="checkbox" id="horns" name="horns">
-        <label for="horns">delete</label>
-      </div>
 
 <table class="table table-dark">
     <thead>

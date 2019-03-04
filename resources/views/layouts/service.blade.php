@@ -24,9 +24,12 @@
         <div class="services-section spad">
             <div class="container">
                 <div class="section-title dark">
-                        <h2>{{$acceuils->titrelabsworld}}
-                                <span>{{$acceuils->titrevertworld}}</span>
-                                {{$acceuils->titreservice}}</h2>
+                    @foreach ($acceuils as $item)
+                        
+                            <h2>{{$item->titrelabsworld}}
+                            <span>{{$item->titrevertworld}}</span>
+                            {{$item->titreservice}}</h2>
+                    @endforeach
                 </div>
                 <div class="row">
                     <!-- single service -->
@@ -61,9 +64,12 @@
             <div class="overlay"></div>
             <div class="container">
                 <div class="section-title">
-                    <h2>{{$acceuils->titrelabsworld}}
-                    <span>{{$acceuils->titrevertworld}}</span>
-                    {{$acceuils->titreword}}</h2>
+                    @foreach ($acceuils as $item)
+                        
+                            <h2>{{$item->titrelabsworld}}
+                            <span>{{$item->titrevertworld}}</span>
+                            {{$item->titreword}}</h2>
+                    @endforeach
                 </div>
                 <div class="row">
                     <!-- feature item -->

@@ -10,10 +10,10 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class MailEvent
+class NewsletterEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $request;
+    public $new;
     /**
      * Create a new event instance.
      *
@@ -21,7 +21,7 @@ class MailEvent
      */
     public function __construct(Request $request)
     {
-        $this->request = $request;
+        $this->new = $request;
     }
 
     /**

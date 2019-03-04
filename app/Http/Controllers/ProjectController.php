@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use Storage;
+use Image;
+use App\Services\Intervention;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -35,11 +38,17 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Intervention $intervention)
     {
         $newproject = new Project;
         $newproject->titre = $request ->titre;
         $newproject->texte = $request ->texte;
+        $newproject->image = $request->image->store('','image');
+
+        // $lien = storage::disk('image')->path($newarticle->image);
+        // $img = Image::make($lien)->resize(500,500);
+        $img = $intervention->imageResize('image','100','100',$newproject->image);
+        $img->save();
         $newproject->image = $request ->image;
         // dd($newservice);
         $newproject->save();

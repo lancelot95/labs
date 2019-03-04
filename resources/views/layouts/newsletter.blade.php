@@ -3,14 +3,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-            <h2>{{$acceuils->newsletter}}</h2>
+                @foreach ($acceuils as $item)
+                    
+                <h2>{{$item->newsletter}}</h2>
+                @endforeach
                
             </div>
             <div class="col-md-9">
                 <!-- newsletter form -->
-                <form class="nl-form">
-                    <input type="text" placeholder="Your e-mail here">
-                <button class="site-btn btn-2">{{$acceuils->newsletter}}</button>
+                <form class="nl-form" action="{{route('forme')}}" method="POST" >
+                    @csrf
+                    <input type="text" placeholder="Your e-mail here" name="email">
+                    <button class="site-btn btn-2">Newsletter</button>
                 </form>
             </div>
         </div>

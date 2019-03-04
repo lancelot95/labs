@@ -27,7 +27,7 @@
       <td scope="row">{{$item->id}}</td>
       <td>{{$item->titre}}</td>
       <td>{{$item->texte}}</td>
-      <td><i class="{{$item->logo}}"></i></td>
+      <td><i class="{{asset($item->logo)}}"></i></td>
       <td>
         <a class="btn btn bg-blue" href="{{route('serviceadmin.edit',['service'=>$item->id])}}">Editer</a>
       </td>

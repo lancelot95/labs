@@ -22,6 +22,7 @@ Route::resource('/serviceadmin','ServiceadminController');
 Route::resource('/blog','BlogController');
 // Route::resource('/blog-post','BlogpostController');
 Route::resource('/contact','ContactController');
+Route::resource('/contactadmin','ContactadminController');
 Route::resource('/carousel','CarouselController');
 Route::resource('/acceuil','AcceuilController');
 Route::resource('/acceuiladmin','AcceuiladminController');
@@ -39,3 +40,8 @@ Route::get('/mail',function () {
     return view('mailform'); 
 })->name('mail');
 Route::post('/mail/send','ContactController@mail')->name('form');
+
+Route::get('/newsletter',function () {
+    return view('mailform'); 
+})->name('mail');
+Route::post('/newsletter/send','BlogController@newsletter')->name('forme');

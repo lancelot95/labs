@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class LancelotMail extends Mailable
+class XavierMail extends Mailable
 {
     use Queueable, SerializesModels;
     public $user;
@@ -28,6 +28,6 @@ class LancelotMail extends Mailable
      */
     public function build()
     {
-        return $this->from('example@example.com')->view('email.mail');
+        return $this->from('example@example.com')->view('newsletter.newsletter');
     }
 }

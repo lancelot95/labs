@@ -2,29 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
 use Illuminate\Http\Request;
-use App\acceuil;
 
-use App\Events\MailEvent;
-
-
-
-class ContactController extends Controller
+class ContactadminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $contacts = Contact::all();
-        $acceuils = Acceuil::all();
-        
-
         // dd($contacts);
-        return view('contact',compact('contacts','acceuils'));
+        return view('contact.contact_index',compact('contacts'));
     }
 
     /**

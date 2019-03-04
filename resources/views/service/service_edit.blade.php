@@ -24,7 +24,7 @@
 
 <div class="form-group">
     <label for="">logo</label>
-    <input type="text" name="logo" id="" class="form-control" value="{{$test->logo}}" aria-describedby="helpId">
+    <input type="text" name="logo" id="" class="form-control" value="{{asset($test->logo)}}" aria-describedby="helpId">
     <small id="helpId" class="text-muted">Help text</small>
      <select name="" id="">
          

@@ -5,12 +5,12 @@
                 <!-- Single Post -->
                 <div class="single-post">
                         <div class="post-thumbnail">
-                                <img src="{{$article->img}}" alt="">
-                                <div class="post-date">
-                                    <h2>03</h2>
-                                    <h3>Nov 2017</h3>
-                                </div>
+                            <img src="{{asset($article->img)}}" alt="">
+                            <div class="post-date">
+                                <h2>03</h2>
+                                <h3>Nov 2017</h3>
                             </div>
+                        </div>
                             <div class="post-content">
                                  
                             <h2 class="post-title">{{$article->titre}}</h2>
@@ -55,13 +55,18 @@
                                 @if ($item->action)
                                     <li>
                                         <div class="avatar">
-                                            <img src="img/avatar/01.jpg" alt="">
+                                        <img src="{{asset("$item->img")}}" alt="">
                                         </div>
                                         <div class="commetn-text">
-                                            <h3>{{$item->name}}</h3>
+                                        <h3>{{$item->name}}-{{
+                                            $item->created_at->format('d M Y')
+                                        }}</h3>
+                                            
                                             <p>{{$item->message}}</p>
                                         </div>
                                     </li>
+                                  
+
                                 @endif
                             @endforeach
                         </ul>

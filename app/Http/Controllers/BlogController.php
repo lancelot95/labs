@@ -12,6 +12,7 @@ use App\categorie;
 use App\tag;
 use App\Commentaire;
 use Illuminate\Http\Request;
+use App\Events\NewsletterEvent;
 
 class BlogController extends Controller
 {
@@ -29,6 +30,7 @@ class BlogController extends Controller
         $articles = Article::all();
         $categories = Categorie::all();
         $tags = Tag::all();
+        $acceuils = Acceuil::all();
        
         
         return view('blog',compact('acceuils','instagrams','titres','articles','categories','tags'));
@@ -80,6 +82,7 @@ class BlogController extends Controller
     {   
         
         $article = Article::where('id',$id)->first();
+        // dd($article);
         $articles = Article::all();
         $titres = Titre::all();
         $instagrams = Instagram::all();
@@ -90,6 +93,7 @@ class BlogController extends Controller
         $tag = Tag::where('id',$id)->first();
         $categorie = Categorie::where('id',$id)->first();
         $commentaires = Commentaire::all();
+        $acceuils = Acceuil::all();
         
         return view('blog-post',compact('article','articles','titres','instagrams','acceuils','categorie','tag', 'tags', 'categories','commentaires'));
     }
@@ -146,10 +150,17 @@ class BlogController extends Controller
         $commentaire = Commentaire::where('id',$id)->first();
         // dd($commentaires);
         $commentaire->action = 'validate';
+        
         $commentaire->save();
         $commentaires = Commentaire::all();
         return view('blog.affichagecommentaire', compact('commentaires'));
         
+    }
+    public function newsletter (Request $request)
+    {
+        event(new NewsletterEvent($request));
+    
+        return redirect()->back();
     }
 
 }

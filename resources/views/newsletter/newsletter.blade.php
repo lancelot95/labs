@@ -1,0 +1,1 @@
+<h4>email: {{$user->email}}</h4>
