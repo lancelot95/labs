@@ -32,6 +32,9 @@ Route::resource('/article','ArticleController');
 Route::resource('/tag','TagController');
 Route::resource('/categorie','CategorieController');
 
+Route::get('/affichage', 'BlogController@affichage')->name('affichage');
+Route::any('/validation/{commentaire}', 'BlogController@validation')->name('validation');
+
 Route::get('/mail',function () {
     return view('mailform'); 
 })->name('mail');

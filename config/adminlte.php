@@ -140,8 +140,8 @@ return [
             
         ],
         [
-            'text' => 'BLOG EDIT',
-            'url'  => 'admin/settings',
+            'text' => 'Commentaire',
+            'url'  => 'affichage',
             'icon' => 'book',
         ],
         [

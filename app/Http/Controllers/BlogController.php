@@ -10,6 +10,7 @@ use App\Article;
 use App\blogpost;
 use App\categorie;
 use App\tag;
+use App\Commentaire;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -19,6 +20,7 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $acceuils = Acceuil::all()->first();
@@ -27,6 +29,8 @@ class BlogController extends Controller
         $articles = Article::all();
         $categories = Categorie::all();
         $tags = Tag::all();
+       
+        
         return view('blog',compact('acceuils','instagrams','titres','articles','categories','tags'));
     }
 
@@ -37,7 +41,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -48,7 +52,22 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newcommentaire = New Commentaire ;
+        $newcommentaire->name = $request ->name;
+        $newcommentaire->message = $request ->message;
+        // dd($newservice);
+        $newcommentaire->save();
+        $commentaires = commentaire::all();
+        $acceuils = Acceuil::all()->first();
+        $instagrams = Instagram::all();
+        $titres = Titre::all();
+        $articles = Article::all();
+        $categories = Categorie::all();
+        $tags = Tag::all();
+       
+        
+        return view('blog',compact('acceuils','instagrams','titres','articles','categories','tags','commentaires'));
+       
     }
 
     /**
@@ -61,6 +80,7 @@ class BlogController extends Controller
     {   
         
         $article = Article::where('id',$id)->first();
+        $articles = Article::all();
         $titres = Titre::all();
         $instagrams = Instagram::all();
         $acceuils = Acceuil::all()->first();
@@ -69,7 +89,9 @@ class BlogController extends Controller
         $tags = Tag::all();
         $tag = Tag::where('id',$id)->first();
         $categorie = Categorie::where('id',$id)->first();
-        return view('blog-post',compact('article','titres','instagrams','acceuils','categorie','tag', 'tags', 'categories'));
+        $commentaires = Commentaire::all();
+        
+        return view('blog-post',compact('article','articles','titres','instagrams','acceuils','categorie','tag', 'tags', 'categories','commentaires'));
     }
 
     /**
@@ -78,9 +100,9 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Commentaire $commentaire)
     {
-        //
+        // return view('blog.commentaire_edit',compact('commentaire'));
     }
 
     /**
@@ -90,9 +112,12 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, commentaire $commentaires)
     {
-        //
+        $commentaire->réponse = $request->reponse;
+        $commentaire->save();
+        $commentaires = commentaire::all();
+        return view('blog',compact("commentaires"));
     }
 
     /**
@@ -101,8 +126,30 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy($id)
     {
-        //
+        $commentaire = Commentaire::where('id',$id)->first();
+        $commentaire->delete();
+        $commentaires = Commentaire::all();
+        
+        return view('blog.affichagecommentaire', compact('commentaires'));
     }
+   
+    public function affichage()
+    {
+        $commentaires = Commentaire::all();
+        return view('blog.affichagecommentaire', compact('commentaires'));
+        
+    }
+    public function validation($id)
+    {
+        $commentaire = Commentaire::where('id',$id)->first();
+        // dd($commentaires);
+        $commentaire->action = 'validate';
+        $commentaire->save();
+        $commentaires = Commentaire::all();
+        return view('blog.affichagecommentaire', compact('commentaires'));
+        
+    }
+
 }

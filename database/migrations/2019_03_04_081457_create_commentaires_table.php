@@ -16,9 +16,10 @@ class CreateCommentairesTable extends Migration
         Schema::create('commentaires', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email');
-            $table->string('subject');
+            $table->string('email')->nullable();
+            $table->string('subject')->nullable();
             $table->string('message');
+            $table->string('action')->nullable();
             $table->timestamps();
         });
     }

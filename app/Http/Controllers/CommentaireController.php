@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\commentaire;
+use App\blog;
 use Illuminate\Http\Request;
 
 class CommentaireController extends Controller
@@ -12,9 +13,16 @@ class CommentaireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function commentaire()
+    // {
+    //     $commentaires = Commentaire::all();
+    //     return view('blog-post', compact('commentaires'));
+    // }
     public function index()
     {
-        //
+
+       $commentaires = Commentaire::all();
+       return view('blog-post',compact('commentaires'));
     }
 
     /**
@@ -24,7 +32,8 @@ class CommentaireController extends Controller
      */
     public function create()
     {
-        //
+       
+        return view('commentaire_create');
     }
 
     /**
@@ -35,7 +44,16 @@ class CommentaireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newcommentaire = New Commentaire ;
+        $newcommentaire->name = $request ->name;
+        $newcommentaire->email = $request ->email;
+        $newcommentaire->subject = $request ->subject;
+        // dd($newservice);
+        $newcommentaire->save();
+        $commentaire = commentaire::all();
+        
+       
+        return view('blog-post',compact('commentaire'));
     }
 
     /**
