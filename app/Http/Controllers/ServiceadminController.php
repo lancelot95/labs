@@ -21,9 +21,7 @@ class ServiceadminController extends Controller
         // $projects = Project::all();
         // $projects2 = Project::all();
         
-
-        
-        return view('service.service_index',compact('services'));
+        return view('service.service_index',compact('services','icons'));
     }
 
     /**
@@ -33,8 +31,8 @@ class ServiceadminController extends Controller
      */
     public function create()
     {
-        
-        return view('service.service_create');
+        $icons = Icon::all();
+        return view('service.service_create',compact('icons'));
     }
 
     /**
@@ -48,14 +46,13 @@ class ServiceadminController extends Controller
         $newservice = new Service;
         $newservice->titre = $request ->titre;
         $newservice->texte = $request ->texte;
-        $
-        $newservice->code = $request ->code;
+        $newservice->icon_id = $request ->icon_id;
         // dd($newservice);
         $newservice->save();
-        $service = Service::all();
+        $services = Service::all();
         
        
-        return view('service.service_index',compact('service'));
+        return view('service.service_index',compact('services'));
     }
 
     /**
@@ -79,8 +76,8 @@ class ServiceadminController extends Controller
     {   
         
         $test = Service::where('id', $id)->first();
-        
-        return view('service.service_edit',compact('test'));
+        $icons = Icon::all();
+        return view('service.service_edit',compact('test','icons'));
     }
 
     /**
@@ -95,7 +92,7 @@ class ServiceadminController extends Controller
         $service = Service::where('id', $id)->first();
         $service->titre = $request->titre;
         $service->texte = $request->texte;
-        $service->logo = $request->logo;
+        $service->icon_id = $request->icon_id;
         $service->save();
 
         
@@ -120,7 +117,6 @@ class ServiceadminController extends Controller
         $service = Service::where('id',$id)->first();
         $service->delete();
         $services = Service::all();
-        
         return view('service.service_index',compact('services'));
     }
     

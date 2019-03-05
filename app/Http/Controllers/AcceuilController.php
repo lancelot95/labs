@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Carousel;
 use App\Acceuiladmin;
 use App\Contact;
+use App\Icon;
 class AcceuilController extends Controller
 {
     /**
@@ -27,9 +28,10 @@ class AcceuilController extends Controller
         $contacts = Contact::all();
         $teams = Team::all();
         $acceuils = Acceuil::all();
+        $icons = Icon::all();
         
             //  dd($testimonials);
-        return view('welcome', compact('acceuils','services','services','services_r','testimonials','teams', 'carou','contacts','acceuils'));
+        return view('welcome', compact('acceuils','services','services','services_r','testimonials','teams', 'carou','contacts','acceuils','icons'));
     }
 
     /**

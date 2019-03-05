@@ -1,5 +1,5 @@
 <div class="widget-item">
-        <h2 class="widget-title">{{$titres[1]->titre}}</h2>
+        <h2 class="widget-title">{{$titres[0]->titre}}</h2>
         <ul>
             @foreach ($categories as $item)
             

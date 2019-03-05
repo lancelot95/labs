@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\World;
+use App\Icon;
 use Illuminate\Http\Request;
 
 class WorldController extends Controller
@@ -15,7 +16,8 @@ class WorldController extends Controller
     public function index()
     {
         $worlds = World::all();
-        return view('world.world_index',compact('worlds'));
+        $icons = Icon::all();
+        return view('world.world_index',compact('worlds','icons'));
     }
 
     /**
@@ -25,7 +27,8 @@ class WorldController extends Controller
      */
     public function create()
     {
-        //
+        $icons = Icon::all();
+        return view('world.world_create',compact('icons'));
     }
 
     /**
@@ -36,7 +39,16 @@ class WorldController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newworld = new World;
+        $newworld->titre = $request ->titre;
+        $newworld->texte = $request ->texte;
+        $newworld->icon_id = $request ->icon_id;
+        // dd($newservice);
+        $newworld->save();
+        $worlds = World::all();
+        
+       
+        return view('world.world_index',compact('worlds'));
     }
 
     /**
@@ -59,7 +71,8 @@ class WorldController extends Controller
     public function edit($id)
     {
         $test = World::where('id', $id)->first();
-        return view('world.world_edit',compact('test'));
+        $icons = Icon::all();
+        return view('world.world_edit',compact('test','icons'));
     }
 
     /**

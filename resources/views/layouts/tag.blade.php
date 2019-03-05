@@ -15,7 +15,7 @@
 					<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
-							<img src="{{$item->img}}" alt="">
+							<img src="{{asset($item->img)}}" alt="">
 							<div class="post-date">
 								<h2>03</h2>
 								<h3>Nov 2017</h3>

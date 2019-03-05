@@ -6,6 +6,14 @@
                 <h2>Loading.....</h2>
             </div>
         </div>
+        <nav>
+                <ul class="menu-list">
+                    <li class="active"><a href="{{asset('acceuil')}}">Home</a></li>
+                    <li><a href="{{asset('service')}}">Service</a></li>
+                    <li><a href="{{asset('blog')}}">Blog</a></li>
+                    <li><a href="{{asset('contact')}}">Contact</a></li>
+                </ul>
+            </nav>
     
         <!-- Intro Section -->
         <div class="hero-section">
@@ -44,7 +52,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="lab-card">
                                     <div class="icon">
-                                    <i class="{{$service->logo}}"></i>
+                                    <i class="{{$service->icons->code}}"></i>
                                     </div>
                                 <h2>{{$service->titre}}</h2>
                                 <p>{{$service->texte}}</p>

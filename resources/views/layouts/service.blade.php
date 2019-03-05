@@ -1,5 +1,6 @@
 
       <!-- Page header -->
+      
 	<div class="page-top-section">
             <div class="overlay"></div>
             <div class="container text-right">
@@ -20,6 +21,24 @@
                 <h2>Loading.....</h2>
             </div>
         </div>
+        <header class="header-section">
+                <div class="logo">
+                    @foreach ($acceuils as $item)
+                        
+                    <img src="{{$item->logonavbar}}" alt=""><!-- Logo -->               
+                    @endforeach
+                </div>
+                <!-- Navigation -->
+                <div class="responsive"><i class="fa fa-bars"></i></div>
+                <nav>
+                    <ul class="menu-list">
+                        <li><a href="{{asset('acceuil')}}">Home</a></li>
+                        <li class="active"><a href="{{asset('service')}}">Service</a></li>
+                        <li><a href="{{asset('blog')}}">Blog</a></li>
+                        <li><a href="{{asset('contact')}}">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
         <!-- services section -->
         <div class="services-section spad">
             <div class="container">
@@ -39,7 +58,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="service">
                             <div class="icon">
-                            <i class="{{$service->logo}}"></i>
+                            <i class="{{$service->icons->code}}"></i>
                             </div>
                             <div class="service-text">
                             <h2>{{$service->titre}}</h2>
@@ -81,7 +100,7 @@
                                 <p>{{$world->texte}}</p>
                                 </div>
                                 <div class="icon">
-                                <i class="{{$world->logo}}"></i>
+                                <i class="{{$world->icons->code}}"></i>
                                 </div>
                             </div>
                         @endforeach
@@ -97,7 +116,7 @@
                         @foreach ($test as $world)
                             <div class="icon-box light">
                                 <div class="icon">
-                                <i class="{{$world->logo}}"></i>
+                                <i class="{{$world->icons->code}}"></i>
                                 </div>
                                 <div class="service-text">
                                     <h2>{{$world->titre}}</h2>

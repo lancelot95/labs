@@ -1,4 +1,4 @@
- @extends('adminlte::page')
+@extends('adminlte::page')
 
 @section('title', 'AdminLTE')
 
@@ -11,7 +11,7 @@
 
 
     
-  <form action="{{route('serviceadmin.store')}}" method="POST" enctype="multipart/form-data">
+  <form action="{{route('worldadmin.store')}}" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
       <label for="">Titre</label>
@@ -27,8 +27,6 @@
 
     <div class="form-group">
         <label>Icon</label>
-            {{-- <input type="file" class="form-control" name="icon" id="" aria-describedby="helpId" value="{{$item->code}}">
-            <i class="{{$item->code}}"></i>        --}}
              <div>
                     @foreach ($icons as $icon)
                         <input type="checkbox" value="{{$icon->id}}" name="icon_id">
@@ -37,11 +35,7 @@
                     @endforeach
             </div>
     </div>
-              
-
-      <button class="btn-warning" type="submit">Submit</button>
+    <button class="btn-warning" type="submit">Submit</button>
     
-  </form>
-
- 
-  @stop 
+</form>
+@stop

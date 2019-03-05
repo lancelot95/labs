@@ -15,49 +15,49 @@ class ServicesTableSeeder extends Seeder
         DB::table('services')->insert([
             'titre' => 'GET IN THE LAB',
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..',
-            'logo' => 'flaticon-023-flask',
+            'icon_id'=>1,
         ]);
 
         DB::table('services')->insert([
             'titre' => 'PROJECTS ONLINE',
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..',
-            'logo' => 'flaticon-011-compass',
+            'icon_id'=>2,
         ]);
 
         DB::table('services')->insert([
             'titre' => 'SMART MARKETING',
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..',
-            'logo' => 'flaticon-037-idea',
+            'icon_id'=>3,
         ]);
         DB::table('services')->insert([
             'titre' => 'SOCIAL MEDIA',
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..',
-            'logo' => 'flaticon-039-vector',
+            'icon_id'=>4,
         ]);
         DB::table('services')->insert([
             'titre' => 'BRAINSTORMING',
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..',
-            'logo' => 'flaticon-036-brainstorming',
+            'icon_id'=>5,
         ]);
         DB::table('services')->insert([
             'titre' => 'DOCUMENTED',
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..',
-            'logo' => 'flaticon-026-search',
+            'icon_id'=>6,
         ]);
         DB::table('services')->insert([
             'titre' => 'RESPONSIVE',
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..',
-            'logo' => 'flaticon-018-laptop-1',
+            'icon_id'=>7,
         ]);
         DB::table('services')->insert([
             'titre' => 'RETINA READY',
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..',
-            'logo' => 'flaticon-043-sketch',
+            'icon_id'=>8,
         ]);
         DB::table('services')->insert([
             'titre' => 'ULTRA MODERN',
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..',
-            'logo' => 'flaticon-012-cube',
+            'icon_id'=>9,
         ]);
     }
 }

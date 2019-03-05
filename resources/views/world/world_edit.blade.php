@@ -23,12 +23,14 @@
 </div>
 
 <div class="form-group">
-    <label for="">logo</label>
-    <input type="text" name="logo" id="" class="form-control" value="{{$test->logo}}" aria-describedby="helpId">
-    <small id="helpId" class="text-muted">Help text</small>
-     <select name="" id="">
-         
-     </select>
+        <label>Icon</label>
+             <div>
+                    @foreach ($icons as $icon)
+                        <input type="checkbox" value="{{$icon->id}}" name="icon_id">
+                    
+                        <label><i  class="{{$icon->code}}"></i></label>
+                    @endforeach
+            </div>
 </div>
 
 <button class="btn btn-danger" type="submit">

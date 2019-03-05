@@ -9,7 +9,7 @@
 
 @section('content')
 <h3>Worlds</h3>
-{{-- <a class="btn btn bg-blue" href="{{route('serviceadmin.create')}}">Ajouter un service</a> --}}
+<a class="btn btn bg-blue" href="{{route('worldadmin.create')}}">Ajouter un projet</a>
 <table class="table">
   <thead>
     <tr>
@@ -26,10 +26,8 @@
     <tr>
       <td scope="row">{{$item->id}}</td>
       <td>{{$item->titre}}</td>
-      <td>{{$item->texte}}</td>
-      <td>
-          
-          <i>{{$item->logo}}</i>
+      <td>{{$item->texte}}</td> 
+      <td><i class="{{$item->icons->code}}"></i></td>
       </td>
       <td>
       <a class="btn btn bg-blue" href="{{route('worldadmin.edit',['worlds'=>$item->id])}}">Editer</a>

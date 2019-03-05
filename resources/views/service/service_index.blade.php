@@ -1,9 +1,12 @@
+ <!-- Favicon -->
+ <link href="img/favicon.ico" rel="shortcut icon"/>
+ 
 @extends('adminlte::page')
 
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>modifier home</h1>
+  
 
 @stop
 
@@ -27,7 +30,7 @@
       <td scope="row">{{$item->id}}</td>
       <td>{{$item->titre}}</td>
       <td>{{$item->texte}}</td>
-      <td><i class="{{asset($item->logo)}}"></i></td>
+      <td><i class="{{$item->icons->code}}"></i></td>
       <td>
         <a class="btn btn bg-blue" href="{{route('serviceadmin.edit',['service'=>$item->id])}}">Editer</a>
       </td>
@@ -39,6 +42,7 @@
           </form>
         </td>
     </tr>
+
     @endforeach
 
   </tbody>

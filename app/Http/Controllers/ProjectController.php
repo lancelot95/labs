@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Project;
 use Storage;
 use Image;
+use App\Icon;
 use App\Services\Intervention;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-         return view('project.projet_index',compact('projects'));
+        $icons = Icon::all();
+         return view('project.projet_index',compact('projects','icons'));
     }
 
     /**

@@ -8,6 +8,7 @@ use App\Project;
 use App\World;
 use App\worldright;
 use App\Contact;
+use App\Icon;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -27,8 +28,9 @@ class ServiceController extends Controller
         $test = World::all()->reverse()->take(3);
         $contacts = Contact::all();
         $acceuils = Acceuil::all();
+        $icons = Icon::all();
         // $worlds = World::();
-        return view('service',compact('acceuils','acceuils','services','projects','worlds','test','contacts'));
+        return view('service',compact('acceuils','acceuils','services','projects','worlds','test','contacts','icons'));
     }
 
     /**
