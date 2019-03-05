@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Acceuil;
 use App\Service;
+use App\Icon;
 use Illuminate\Http\Request;
 class ServiceadminController extends Controller
 {
@@ -32,6 +33,7 @@ class ServiceadminController extends Controller
      */
     public function create()
     {
+        
         return view('service.service_create');
     }
 
@@ -46,7 +48,8 @@ class ServiceadminController extends Controller
         $newservice = new Service;
         $newservice->titre = $request ->titre;
         $newservice->texte = $request ->texte;
-        $newservice->logo = $request ->logo;
+        $
+        $newservice->code = $request ->code;
         // dd($newservice);
         $newservice->save();
         $service = Service::all();

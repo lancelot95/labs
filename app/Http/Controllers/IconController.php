@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Categorie;
-use App\Article;
-use App\Acceuil;
-use App\Titre;
-use App\tag;
+use App\icon;
 use Illuminate\Http\Request;
 
-class CategorieController extends Controller
+class IconController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -45,29 +41,21 @@ class CategorieController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Categorie  $categorie
+     * @param  \App\icon  $icon
      * @return \Illuminate\Http\Response
      */
-    public function show($cat)
+    public function show(icon $icon)
     {
-        $cat = Categorie::where('id', $cat)->first();
-        $articles = $cat->articles; // array
-        $titres = Titre::all();
-        $acceuils = Acceuil::all()->first();
-        $categories = Categorie::all();
-        $tags = Tag::all();
-        // dd($cat);
-        $acceuils = Acceuil::all();
-        return view('tag',compact('articles','titres','instagrams','acceuils','categories','tags'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Categorie  $categorie
+     * @param  \App\icon  $icon
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categorie)
+    public function edit(icon $icon)
     {
         //
     }
@@ -76,10 +64,10 @@ class CategorieController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Categorie  $categorie
+     * @param  \App\icon  $icon
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categorie)
+    public function update(Request $request, icon $icon)
     {
         //
     }
@@ -87,10 +75,10 @@ class CategorieController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Categorie  $categorie
+     * @param  \App\icon  $icon
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categorie $categorie)
+    public function destroy(icon $icon)
     {
         //
     }

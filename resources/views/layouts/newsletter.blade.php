@@ -5,7 +5,7 @@
             <div class="col-md-3">
                 @foreach ($acceuils as $item)
                     
-                <h2>{{$item->newsletter}}</h2>
+                     <h2>{{$item->newsletter}}</h2>
                 @endforeach
                
             </div>

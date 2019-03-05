@@ -55,9 +55,10 @@ class TagController extends Controller
         $acceuils = Acceuil::all()->first();
         $tags = Tag::all();
         $categories = Categorie::all();
+        $acceuils = Acceuil::all();
         // dd($articles);
        
-        return view('tag',compact('articles','titres','instagrams','acceuils','categories','tags'));
+        return view('tag',compact('articles','titres','instagrams','acceuils','categories','tags','acceuils'));
     }
 
     /**

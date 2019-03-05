@@ -27,7 +27,9 @@
 
     <div class="form-group">
         <label for="">Icon</label>
-        <input type="file" class="form-control" name="logo" id="" aria-describedby="helpId" value="">         
+        @foreach ($icon as $item)
+        <input type="file" class="form-control" name="icon" id="" aria-describedby="helpId" value="{{$item->code}}"><i class="{{$item->code}}"></i>       
+        @endforeach
     </div>
 
       <button class="btn-warning" type="submit">Submit</button>
