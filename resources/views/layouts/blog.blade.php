@@ -23,7 +23,18 @@
 				</ul>
 			</nav>
 		</header>
-
+		<div class="page-top-section">
+				<div class="overlay"></div>
+				<div class="container text-right">
+					<div class="page-info">
+						<h2>Blog</h2>
+						<div class="page-links">
+							<a href="#">Home</a>
+							<span>Blog</span>
+						</div>
+					</div>
+				</div>
+			</div>
 	<!-- page section -->
 	<div class="page-section spad">
 		<div class="container">
@@ -34,7 +45,8 @@
 					<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
-							<img src="{{$item->img}}" alt="">
+								<img src="{{Storage::disk('image')->url($item->img)}}" height="270" width="755" alt="">
+								<img src="{{$item->img}}" alt="">
 							<div class="post-date">
 								<h2>03</h2>
 								<h3>Nov 2017</h3>
@@ -51,7 +63,7 @@
 									@endforeach
 							
 							
-									<a href="">{{$item->categories->theme}}</a>&nbsp;
+								<a href="">{{$item->categories->theme}}</a>&nbsp;
 								
 							</div>
 								{{-- <div class="post-meta">

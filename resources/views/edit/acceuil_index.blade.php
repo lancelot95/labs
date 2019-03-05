@@ -22,7 +22,10 @@
     @foreach ($carou as $item)       
     <tr>
       <td scope="row">{{$item->id}}</td>
-      <td>{{$item->image_url}}</td>
+      <td>
+      <img src="{{Storage::disk('image')->url($item->image_url)}}"  height="100" width="100" alt="">
+      <img src="{{$item->image_url}}"height="100" width="100" alt="">
+    </td>
     </tr>
     @endforeach
 

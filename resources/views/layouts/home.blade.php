@@ -31,7 +31,9 @@
             <div id="hero-slider" class="owl-carousel">
                 
                 @foreach ($carou as $item)
-                <div class="item  hero-item" data-bg="{{$item->image_url}}"></div>
+                <div class="item  hero-item" data-bg="{{Storage::disk('image')->url($item->image_url)}}" src="{{$item->image_url}}" alt=""></div>
+                 {{-- <img src="{{Storage::disk('image')->url($item->image_url)}}" height="270" width="755" alt=""> --}}
+                
                 @endforeach
             </div>
         </div>

@@ -111,6 +111,12 @@ return [
         
         'MODIFICATION',
         [
+            'text' => 'USER',
+             'url'  => 'user',
+            'icon' => 'user',
+            
+        ],
+        [
             'text' => 'HOME EDIT',
              'url'  => 'acceuiladmin',
             'icon' => 'home',
@@ -129,12 +135,12 @@ return [
             
         ],
         [
-            'text' => 'SERVICES EDIT',
+            'text' => 'SERVICES',
             'url'  => 'serviceadmin',
             'icon' => 'gears',
         ],
         [
-            'text' => 'project EDIT',
+            'text' => 'project',
              'url'  => 'projectadmin',
             'icon' => 'project',
             
@@ -146,12 +152,12 @@ return [
         ],
         [
         
-            'text' => 'BLOG-POST EDIT',
+            'text' => 'BLOG-POST ',
             'url'  => 'admin/settings',
             'icon' => 'book',
         ],    
         [
-            'text' => 'CREER UN ARTICLE',
+            'text' => 'ARTICLE',
             'url'  => 'article',
             'icon' => 'book',
         ],

@@ -16,7 +16,9 @@
                 <!-- Post item -->
                 <div class="post-item">
                     <div class="post-thumbnail">
+                        <img src="{{Storage::disk('image')->url($item->img)}}" height="270" width="755" alt="">
                         <img src="{{$item->img}}" alt="">
+                        {{-- <img class="card-img-top" src="{{Storage::disk('image')->url($item->image)}}"> --}}
                         <div class="post-date">
                             <h2>03</h2>
                             <h3>Nov 2017</h3>

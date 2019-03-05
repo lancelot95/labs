@@ -29,10 +29,10 @@
 			<div class="container text-right">
 				<div class="page-info">
 					<h2>Contact</h2>
-					{{-- <div class="page-links">
+					<div class="page-links">
 						<a href="#">Home</a>
 						<span>Contact</span>
-					</div> --}}
+					</div>
 				</div>
 			</div>
 		</div>

@@ -44,7 +44,7 @@ class AcceuiladminController extends Controller
     public function store(Request $request)
     {
         $newcarou = new Carousel;
-        $newcarou->image_url = $request ->image_url;
+        $newcarou->image_url = $request ->image_url->store('','image');
         $newcarou->save();
         $carou = Carousel::all();
         $acceuils = Acceuil::all();  
@@ -96,7 +96,7 @@ class AcceuiladminController extends Controller
         $acceuil->titreteam = $request->titreteam;
         $acceuil->titrestandout = $request->titrestandout;
         $acceuil->textestandout = $request->textestandout;
-      
+        
         $acceuil->update();
         $acceuils = Acceuil::all();  
         $carou = Carousel::all();

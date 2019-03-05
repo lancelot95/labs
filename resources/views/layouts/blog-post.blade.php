@@ -1,3 +1,35 @@
+<!-- Page Preloder -->
+
+<div id="preloder">
+		<div class="loader">
+			<img src="img/logo.png" alt="">
+			<h2>Loading.....</h2>
+		</div>
+	</div>
+	<header class="header-section">
+			<div class="logo">
+				@foreach ($acceuils as $item)
+					
+				<img src="{{$item->logonavbar}}" alt=""><!-- Logo -->               
+				@endforeach
+			</div>
+			<!-- Navigation -->
+			<div class="responsive"><i class="fa fa-bars"></i></div>
+			<nav>
+				<ul class="menu-list">
+					<li><a href="{{asset('acceuil')}}">Home</a></li>
+					<li ><a href="{{asset('service')}}">Service</a></li>
+					<li class="active"><a href="{{asset('blog')}}">Blog</a></li>
+					<li><a href="{{asset('contact')}}">Contact</a></li>
+				</ul>
+			</nav>
+	</header>
+
+    <!-- page section -->
+  
+
+
+
 <div  class="page-section spad">
     <div class="container">
         <div class="row">
@@ -55,7 +87,8 @@
                                 @if ($item->action)
                                     <li>
                                         <div class="avatar">
-                                        <img src="{{asset("$item->img")}}" alt="">
+                                                <img src="{{Storage::disk('image')->url($item->img)}}" height="270" width="755" alt="">
+                                                <img src="{{$item->img}}" alt="">
                                         </div>
                                         <div class="commetn-text">
                                         <h3>{{$item->name}}-{{

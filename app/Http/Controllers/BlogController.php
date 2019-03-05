@@ -90,12 +90,12 @@ class BlogController extends Controller
         // $categorie = Categorie::where('id',$id)->first();
         $categories = Categorie::all();
         $tags = Tag::all();
-        $tag = Tag::where('id',$id)->first();
+        // $tag = Tag::where('id',$id)->first();
         $categorie = Categorie::where('id',$id)->first();
         $commentaires = Commentaire::all();
         $acceuils = Acceuil::all();
         
-        return view('blog-post',compact('article','articles','titres','instagrams','acceuils','categorie','tag', 'tags', 'categories','commentaires'));
+        return view('blog-post',compact('article','articles','titres','instagrams','acceuils','categorie', 'tags', 'categories','commentaires'));
     }
 
     /**

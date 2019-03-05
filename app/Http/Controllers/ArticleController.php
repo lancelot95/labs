@@ -6,6 +6,9 @@ use App\Article;
 use App\tag;
 use App\Alessio;
 use App\categorie;
+use Storage;
+// use Image;
+use App\Services\Intervention;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreArticle;
 
@@ -47,7 +50,11 @@ class ArticleController extends Controller
         $newarticle = new Article;
         $newalessio = new Alessio;
         $newtag = new Tag;
-        $newarticle->img = $request->img;
+        $newarticle->img = $request->img->store('','image');
+        //  $img = $intervention->imageResize();
+        //  $img->save();
+
+
         $newarticle->titre =$request->titre;
         $newarticle->texte =$request->texte;
         $newarticle->categorie_id =$request->categorie_id;

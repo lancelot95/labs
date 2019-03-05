@@ -22,7 +22,7 @@
                         </div>
                   @endforeach
             @endif --}}
-            <input type="text" class="form-control" name="img" id="" aria-describedby="helpId" placeholder="">
+            <input type="file" class="form-control" name="img" id="" aria-describedby="helpId" placeholder="">
           
       </div>
 
