@@ -21,7 +21,8 @@
                 <div class="hero-center">
                     @foreach ($acceuils as $item)
                         
-                        <img src="{{$item->biglogo}}"  alt="">   
+                        
+                    <img src="{{Storage::disk('image')->url($item->biglogo)}}">
                     
                         <p>{{$item->titrecarousel}}</p>
                     @endforeach

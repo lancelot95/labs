@@ -16,4 +16,13 @@ class Article extends Model
     {
         return $this->belongsTo('App\Categorie','categorie_id','id');
     }
+    public function users()
+    {
+        return $this->belongsTo('App\User','user_id');
+    }
+
+    public function commentaires()
+    {
+        return $this->hasMany('App\Commentaire','article_id');
+    }
 }

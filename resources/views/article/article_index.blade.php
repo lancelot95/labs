@@ -21,7 +21,7 @@
                 <div class="post-item">
                     <div class="post-thumbnail">
                         <img src="{{Storage::disk('image')->url($item->img)}}" height="270" width="755" alt="">
-                        <img src="{{$item->img}}" alt="">
+                        
                         {{-- <img class="card-img-top" src="{{Storage::disk('image')->url($item->image)}}"> --}}
                         <div class="post-date">
                             <h2>03</h2>
@@ -31,6 +31,7 @@
                     <div class="post-content">
                          
                         <h2 class="post-title">{{$item->titre}}</h2>
+                        <p>{{$item->users->name}} <span>Auth</span> </p> 
                         <div class="post-meta">
                             
                            
@@ -41,7 +42,7 @@
                             @endforeach
                             -&nbsp;
                                <a href="">{{$item->categories->theme}}</a>&nbsp;
-                        
+                            
                         </div>
                         {{-- <div class="post-meta">
                                 @foreach ($articles->tags as $tag)

@@ -2,8 +2,8 @@
 	<header class="header-section">
             <div class="logo">
                 @foreach ($acceuils as $acceuil)
-                    
-                <img src="{{$acceuil->logonavbar}}" alt=""><!-- Logo -->               
+                  <!-- Logo --> 
+               <img src="{{Storage::disk('image')->url($acceuil->logonavbar)}}">
                 @endforeach
             </div>
             <!-- Navigation -->

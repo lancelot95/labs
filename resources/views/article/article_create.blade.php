@@ -3,16 +3,28 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
+<a class="btn btn bg-blue" href="{{route('article.index')}}">Page précédente</a>
 
 @stop
 
 @section('content')
-<a class="btn btn bg-blue" href="{{route('article.index')}}">Page précédente</a>
 
 
     
   <form action="{{route('article.store')}}" method="POST" enctype="multipart/form-data">
   @csrf
+      <select name="user_id" id="">
+            @foreach ($users as $item)
+            @if($errors->has('user_id'))
+                  @foreach ($errors->get('user_id') as $error)
+                        <div class="text-danger">
+                              {{$errors->first('user_id')}}
+                        </div>
+                  @endforeach
+            @endif
+            <option  class="user_id" value="{{$item->id}}">{{$item->name}}</option>
+            @endforeach
+      </select>
       <div class="form-group">
             <label for="">Image</label>
             @if($errors->has('img'))
@@ -80,12 +92,8 @@
             <label>{{$categorie->theme}}</label>
       </div>
       @endforeach
-
-           
-
       
-
-
+        
       <button class="btn-warning" type="submit">Submit</button>
     
   </form>

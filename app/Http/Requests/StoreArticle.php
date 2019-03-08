@@ -24,11 +24,11 @@ class StoreArticle extends FormRequest
     public function rules()
     {
         return [
-            'img'=>'required|mimes:jpeg,jpg,png',
-            'titre'=>'required|min:2',
-            'texte'=>'required|max:10',
-            'tags[]'=>'required|min:1',
-            'categorie_id'=>'required|min:1'
+            // 'img'=>'required|mimes:jpeg,jpg,png',
+            'titre'=>'required|alpha|min:2',
+            'texte'=>'required|alpha|max:40',
+            // 'tags[]'=>'required|min:1',
+            // 'categorie_id'=>'required|min:1'
         ];
 
     }

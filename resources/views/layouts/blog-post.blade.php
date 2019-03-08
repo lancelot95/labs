@@ -37,10 +37,10 @@
                 <!-- Single Post -->
                 <div class="single-post">
                         <div class="post-thumbnail">
-                            <img src="{{asset($article->img)}}" alt="">
+                            {{-- <img src="{{asset($article->img)}}" alt=""> --}}
+                            <img src="{{Storage::disk('image')->url($article->img)}}"height="270" width="755">
                             <div class="post-date">
-                                <h2>03</h2>
-                                <h3>Nov 2017</h3>
+                                    <p>{{$article->created_at->format('d - M - Y')}}</p>
                             </div>
                         </div>
                             <div class="post-content">
@@ -64,43 +64,43 @@
                                         
                                         -&nbsp;
                                         <a href="">{{$categorie->theme}}</a>&nbsp;-&nbsp;
-                                        <a href="">2 Comments</a>
+                                        <a>Comments {{sizeof($commentaires)}}</a>
                                 </div>
                                 <p>{{$article->texte}}</p>
                             </div>
                     <!-- Post Author -->
-                    {{-- <div class="author">
+
+                     <div class="author">
                         <div class="avatar">
-                            <img src="img/avatar/03.jpg" alt="">
+                            {{-- <img src="img/avatar/03.jpg" alt=""> --}}
+                            <img src="{{Storage::disk('image')->url($article->users->image)}}" height="100">
+                           
                         </div>
                         <div class="author-info">
-                            <h2>{{$item->nom}} <span>Author</span></h2>
-                        <p>{{$item->description}}</p>
+                            <h2>{{$article->users->name}} <span>Author</span></h2>
+                        <p>{{$article->users->description}}</p>
                         </div>
                        
-                    </div> --}}
+                    </div> 
                     <!-- Post Comments -->
                     <div class="comments">
-                        <h2>Comments (2)</h2>
+                    <h2>Comments {{sizeof($commentaires)}}</h2>
                         <ul class="comment-list">
-                            @foreach ($commentaires as $item) 
-                                @if ($item->action)
+                            @foreach ($commentaires as $commentaire) 
+                                
                                     <li>
-                                        <div class="avatar">
-                                                <img src="{{Storage::disk('image')->url($item->img)}}" height="270" width="755" alt="">
+                                        {{-- <div class="avatar">
+                                                <img src="{{Storage::disk('image')->url($article->item->img)}}" height="270" width="755" alt="">
                                                 <img src="{{$item->img}}" alt="">
-                                        </div>
-                                        <div class="commetn-text">
-                                        <h3>{{$item->name}}-{{
-                                            $item->created_at->format('d M Y')
-                                        }}</h3>
-                                            
-                                            <p>{{$item->message}}</p>
+                                        </div> --}}
+                                        <div class="comment-text">
+                                        <h3>{{$commentaire->name}}</h3>    
+                                        <p>{{$commentaire->message}}</p>
                                         </div>
                                     </li>
                                   
 
-                                @endif
+                               
                             @endforeach
                         </ul>
                     </div>

@@ -48,6 +48,7 @@ class ArticlesTableSeeder extends Seeder
             'created_at'=>now()->format('Y-m-d'),
             'user_id' => 1,
             
+            
             // 'nom'=>'Jean-phillippe Williams,',
             // 'fonction'=>'Author',
             // 'description'=>'Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.',

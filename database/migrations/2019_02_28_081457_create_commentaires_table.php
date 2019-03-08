@@ -20,6 +20,8 @@ class CreateCommentairesTable extends Migration
             $table->string('subject')->nullable();
             $table->string('message');
             $table->string('action')->nullable();
+            $table->unsignedInteger('article_id');
+            $table->foreign('article_id')->references('id')->on('articles');
             $table->timestamps();
         });
     }

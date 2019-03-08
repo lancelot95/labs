@@ -46,8 +46,8 @@
 					<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
-								<img src="{{Storage::disk('image')->url($item->img)}}" height="270" width="755" alt="">
-								<img src="{{asset($item->img)}}" alt="">
+								<img src="{{Storage::disk('image')->url($item->img)}}" height="270" width="755">
+								{{-- <img src="{{asset($item->img)}}" alt=""> --}}
 							<div class="post-date">
 								<p>{{$item->created_at->format('d - M - Y')}}</p>
 							</div>
@@ -80,6 +80,7 @@
 					<!-- Pagination -->
 				
 					@endforeach
+					
 				</div>
 				<!-- Sidebar area -->
 				<div class="col-md-4 col-sm-5 sidebar">

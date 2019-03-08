@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
              'role_id' => 1,
              'image' => '/team/1.jpg',
              'created_at'=>now()->format('Y-m-d'),
+             'description'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est,'
            
         ]);
         DB::table('users')->insert([
@@ -27,6 +28,7 @@ class UsersTableSeeder extends Seeder
              'role_id' => 2,
              'image' => '/team/2.jpg',
              'created_at'=>now()->format('Y-m-d'),
+             'description'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est,'
         ]);
         DB::table('users')->insert([
             'name' => 'Alessio',
@@ -35,6 +37,7 @@ class UsersTableSeeder extends Seeder
             'role_id' => 2,
             'image' => '/team/3.jpg',
             'created_at'=>now()->format('Y-m-d'),
+            'description'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est,'
         ]);
         DB::table('users')->insert([
             'name' => 'Mimo',
@@ -43,6 +46,7 @@ class UsersTableSeeder extends Seeder
             'role_id' => 3,
             'image' => '/team/1.jpg',
             'created_at'=>now()->format('Y-m-d'),
+            'description'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est,'
         ]);
     }
 }

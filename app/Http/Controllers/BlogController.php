@@ -11,6 +11,7 @@ use App\blogpost;
 use App\categorie;
 use App\tag;
 use App\Commentaire;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreArticle;
 use App\Http\Requests\StoreContactadmin;
@@ -33,11 +34,11 @@ class BlogController extends Controller
         $articles = Article::all();
         $categories = Categorie::all();
         $tags = Tag::all();
-        
+        $users = User::all();
         
        
         
-        return view('blog',compact('acceuils','instagrams','titres','articles','categories','tags'));
+        return view('blog',compact('acceuils','instagrams','titres','articles','categories','tags','users'));
     }
 
     /**
@@ -87,7 +88,7 @@ class BlogController extends Controller
         
         $article = Article::where('id',$id)->first();
         // dd($article);
-        $articles = Article::all();
+        // $articles = Article::all();
         $titres = Titre::all();
         $instagrams = Instagram::all();
         // $acceuils = Acceuil::all()->first();
@@ -96,10 +97,13 @@ class BlogController extends Controller
         $tags = Tag::all();
         // $tag = Tag::where('id',$id)->first();
         $categorie = Categorie::where('id',$id)->first();
-        $commentaires = Commentaire::all();
+        $commentaires = $article->commentaires->where('action', '!=', null);
+        // dd($commentaires);
+        // dd($commentaires);
         $acceuils = Acceuil::all();
+        $users = User::all();
         
-        return view('blog-post',compact('article','articles','titres','instagrams','acceuils','categorie', 'tags', 'categories','commentaires'));
+        return view('blog-post',compact('article','titres','instagrams','acceuils','categorie', 'tags', 'categories','commentaires','users'));
     }
 
     /**
@@ -146,6 +150,7 @@ class BlogController extends Controller
     public function affichage()
     {
         $commentaires = Commentaire::all();
+        
         return view('blog.affichagecommentaire', compact('commentaires'));
         
     }
@@ -157,6 +162,7 @@ class BlogController extends Controller
         
         $commentaire->save();
         $commentaires = Commentaire::all();
+        
         return view('blog.affichagecommentaire', compact('commentaires'));
         
     }

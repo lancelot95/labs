@@ -12,5 +12,9 @@ class commentaire extends Model
     {
         return $query->where('action', '!=', null);
     }
+    public function articles()
+    {
+        return $this->belongsTo('App\Article');
+    }
 
 }
