@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-{{-- <a class="btn btn bg-blue" href="{{route('acceuiladmin_index')}}">Page précédente</a> --}} 
+<a class="btn btn bg-blue" href="{{route('worldadmin.index')}}">Page précédente</a> 
 
 
     
@@ -35,6 +35,18 @@
                     @endforeach
             </div>
     </div>
+    <div class="form-group">
+            <label for="">Image</label>
+            @if($errors->has('image'))
+                  @foreach ($errors->get('image') as $error)
+                        <div class="text-danger">
+                              {{$errors->first('image')}}
+                        </div>
+                  @endforeach
+            @endif
+            <input type="file" class="form-control" name="image" id="" aria-describedby="helpId" placeholder="">
+    </div>
+
     <button class="btn-warning" type="submit">Submit</button>
     
 </form>

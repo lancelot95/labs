@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\commentaire;
 use App\blog;
+use App\Http\Requests\StoreArticle;
 use Illuminate\Http\Request;
 
 class CommentaireController extends Controller
@@ -42,13 +43,13 @@ class CommentaireController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreArticle $request)
     {
         $newcommentaire = New Commentaire ;
         $newcommentaire->name = $request ->name;
         $newcommentaire->email = $request ->email;
         $newcommentaire->subject = $request ->subject;
-        // dd($newservice);
+        
         $newcommentaire->save();
         $commentaire = commentaire::all();
         

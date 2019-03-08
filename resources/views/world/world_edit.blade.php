@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1>LABS</h1>
+    <a class="btn btn bg-blue" href="{{route('worldadmin.index')}}">Page précédente</a> 
 @stop
 
 @section('content')

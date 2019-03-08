@@ -11,6 +11,8 @@ use App\Carousel;
 use App\Acceuiladmin;
 use App\Contact;
 use App\Icon;
+use App\User;
+use App\Client;
 class AcceuilController extends Controller
 {
     /**
@@ -25,13 +27,15 @@ class AcceuilController extends Controller
         $services = Service::take(9)->get();
         $services_r = Service::all()->random(3);
         $testimonials = Testimonial::all();
+        $clients = Client::all();
         $contacts = Contact::all();
-        $teams = Team::all();
+        // $teams = Team::all();
         $acceuils = Acceuil::all();
         $icons = Icon::all();
+        $users = User::all()->random(3);
         
             //  dd($testimonials);
-        return view('welcome', compact('acceuils','services','services','services_r','testimonials','teams', 'carou','contacts','acceuils','icons'));
+        return view('welcome', compact('acceuils','services','services','services_r','testimonials', 'carou','contacts','acceuils','icons','users','clients'));
     }
 
     /**

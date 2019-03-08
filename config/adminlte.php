@@ -114,110 +114,117 @@ return [
             'text' => 'USER',
              'url'  => 'user',
             'icon' => 'user',
-            
+            'can' => 'admin'
         ],
         [
-            'text' => 'HOME EDIT',
+            
+            'text' => 'HOME',
              'url'  => 'acceuiladmin',
             'icon' => 'home',
+            'can' => 'admin'
             
         ],
         [
-            'text' => 'world EDIT',
+            'text' => 'world',
              'url'  => 'worldadmin',
             'icon' => 'world',
-            
+            'can' => 'admin'
         ],
         [
-            'text' => 'TESTIMONIALS EDIT',
+            'text' => 'TESTIMONIALS',
              'url'  => 'testimonialsadmin',
             'icon' => '',
-            
+            'can' => 'admin'
+        ],
+        [
+            'text' => 'CLIENTS',
+             'url'  => 'client',
+            'icon' => '',
+            'can' => 'admin'
         ],
         [
             'text' => 'SERVICES',
             'url'  => 'serviceadmin',
             'icon' => 'gears',
+            'can' => 'admin'
         ],
         [
             'text' => 'project',
              'url'  => 'projectadmin',
             'icon' => 'project',
-            
+            'can' => 'admin'
         ],
         [
             'text' => 'Commentaire',
             'url'  => 'affichage',
             'icon' => 'book',
+            
         ],
-        [
-        
-            'text' => 'BLOG-POST ',
-            'url'  => 'admin/settings',
-            'icon' => 'book',
-        ],    
+         
         [
             'text' => 'ARTICLE',
             'url'  => 'article',
             'icon' => 'book',
+            
         ],
         [
-            'text' => 'CONTACT EDIT',
-            'url'  => 'contact',
+            'text' => 'CONTACT',
+            'url'  => 'contactadmin',
             'icon' => 'commenting',
+            'can' => 'admin'
         ],
        
-        [
-            'text'    => 'Multilevel',
-            'icon'    => 'share',
-            'submenu' => [
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        'LABELS',
-        [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
-        ],
+        // [
+        //     'text'    => 'Multilevel',
+        //     'icon'    => 'share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Level One',
+        //             'url'  => '#',
+        //         ],
+        //         [
+        //             'text'    => 'Level One',
+        //             'url'     => '#',
+        //             'submenu' => [
+        //                 [
+        //                     'text' => 'Level Two',
+        //                     'url'  => '#',
+        //                 ],
+        //                 [
+        //                     'text'    => 'Level Two',
+        //                     'url'     => '#',
+        //                     'submenu' => [
+        //                         [
+        //                             'text' => 'Level Three',
+        //                             'url'  => '#',
+        //                         ],
+        //                         [
+        //                             'text' => 'Level Three',
+        //                             'url'  => '#',
+        //                         ],
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'text' => 'Level One',
+        //             'url'  => '#',
+        //         ],
+        //     ],
+        // ],
+        // 'LABELS',
+        // [
+        //     'text'       => 'Important',
+        //     'icon_color' => 'red',
+        // ],
+        // [
+        //     'text'       => 'Warning',
+        //     'icon_color' => 'yellow',
+        // ],
+        // [
+        //     'text'       => 'Information',
+        //     'icon_color' => 'aqua',
+        // ],
     ],
 
     /*

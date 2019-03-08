@@ -7,7 +7,7 @@ use App\Carousel;
 use App\Service;
 use App\Testimonial;
 use App\Team;
-
+use App\Http\Requests\StoreAcceuiladmin;
 use Illuminate\Http\Request;
 class AcceuiladminController extends Controller
 {
@@ -41,7 +41,7 @@ class AcceuiladminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAcceuiladmin $request)
     {
         $newcarou = new Carousel;
         $newcarou->image_url = $request ->image_url->store('','image');
@@ -83,7 +83,7 @@ class AcceuiladminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(StoreAcceuiladmin $request)
     {
         $acceuil = Acceuil::first();
         $acceuil->titrecarousel = $request->titrecarousel;

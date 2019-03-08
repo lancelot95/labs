@@ -41,6 +41,7 @@
                     <a href="">02.</a>
                     <a href="">03.</a>
                 </div>
+                @can('admin')
                 <a class="btn btn bg-blue" href="{{route('article.edit',['articles'=>$article->id])}}">Editer</a>
                 
                     <form action="{{route('article.destroy',['id'=>$article->id])}}" method="post">
@@ -48,7 +49,7 @@
                         @csrf
                         <button class="btn btn bg-danger text-white" type="submit">Delete</button>
                     </form>
-                
+                @endcan
             </div>            
             
         </div>

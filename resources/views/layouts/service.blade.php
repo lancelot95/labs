@@ -139,17 +139,17 @@
         <div id="image" class="services-card-section spad">
             <div class="container">
                 <div class="row">
-                    <!-- Single Card -->
-                    @foreach ($projects as $project)
+                    <!-- les trois derniers projets -->
+                    @foreach ($worlds as $word)
                         
                         <div class="col-md-4 col-sm-6">
                             <div class="sv-card">
                                 <div class="card-img">
-                                <img src="{{$project->image}}" alt="">
+                                <img src="{{Storage::disk('image')->url($word->image)}}"alt="">
                                 </div>
                                 <div class="card-text">
-                                <h2>{{$project->titre}}</h2>
-                                    <p>{{$project->texte}}</p>
+                                <h2>{{$word->titre}}</h2>
+                                    <p>{{$word->texte}}</p>
                                 </div>
                             </div>
                         </div>

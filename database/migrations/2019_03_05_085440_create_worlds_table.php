@@ -19,6 +19,7 @@ class CreateWorldsTable extends Migration
             $table->string('texte');
             $table->unsignedInteger('icon_id');
             $table->foreign('icon_id')->references('id')->on('icons');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

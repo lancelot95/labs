@@ -12,6 +12,9 @@ use App\categorie;
 use App\tag;
 use App\Commentaire;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreArticle;
+use App\Http\Requests\StoreContactadmin;
+use App\Http\Requests\StoreNewsletter;
 use App\Events\NewsletterEvent;
 
 class BlogController extends Controller
@@ -24,13 +27,14 @@ class BlogController extends Controller
     
     public function index()
     {
-        $acceuils = Acceuil::all()->first();
+        $acceuils = Acceuil::all();
         $instagrams = Instagram::all();
         $titres = Titre::all();
         $articles = Article::all();
         $categories = Categorie::all();
         $tags = Tag::all();
-        $acceuils = Acceuil::all();
+        
+        
        
         
         return view('blog',compact('acceuils','instagrams','titres','articles','categories','tags'));
@@ -52,7 +56,7 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreContactadmin $request)
     {
         $newcommentaire = New Commentaire ;
         $newcommentaire->name = $request ->name;
@@ -60,7 +64,7 @@ class BlogController extends Controller
         // dd($newservice);
         $newcommentaire->save();
         $commentaires = commentaire::all();
-        $acceuils = Acceuil::all()->first();
+        $acceuils = Acceuil::all();
         $instagrams = Instagram::all();
         $titres = Titre::all();
         $articles = Article::all();
@@ -86,7 +90,7 @@ class BlogController extends Controller
         $articles = Article::all();
         $titres = Titre::all();
         $instagrams = Instagram::all();
-        $acceuils = Acceuil::all()->first();
+        // $acceuils = Acceuil::all()->first();
         // $categorie = Categorie::where('id',$id)->first();
         $categories = Categorie::all();
         $tags = Tag::all();
@@ -156,11 +160,27 @@ class BlogController extends Controller
         return view('blog.affichagecommentaire', compact('commentaires'));
         
     }
-    public function newsletter (Request $request)
+    public function newsletter (StoreNewsletter $request)
     {
         event(new NewsletterEvent($request));
     
         return redirect()->back();
+    }
+    public function search(Request $request)
+    {
+        // dd($request);
+       $keyword = $request->input('inputsearch');
+       $articles = Article::where('titre','LIKE','%'.$keyword.'%')->get();
+       
+        $acceuils = Acceuil::all()->first();
+        $instagrams = Instagram::all();
+        $titres = Titre::all();
+        $categories = Categorie::all();
+        $tags = Tag::all();
+        $acceuils = Acceuil::all();
+       
+        
+        return view('blog',compact('acceuils','instagrams','titres','articles','categories','tags'));
     }
 
 }

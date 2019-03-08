@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\contact;
 
 class ContactadminController extends Controller
 {
@@ -51,11 +52,11 @@ class ContactadminController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit($id)
     {
-        $test = Contact::all();
+        $contact = Contact::all();
        
-        return view('edit.acceuil_edit',compact('test'));
+        return view('contact.contact_edit',compact('contact'));
     }
 
     /**
@@ -65,7 +66,7 @@ class ContactadminController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(StoreContactadmin $request,Contact $contact)
     {
         $contact = Acceuil::first();
         $contact ->contactus = $request ->contactus;
@@ -89,7 +90,7 @@ class ContactadminController extends Controller
     {
         //
     }
-    public function mail (Request $request){
+    public function mail (StoreContactadmin $request){
         event(new MailEvent($request));
     
         return redirect()->back();

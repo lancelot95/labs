@@ -1,9 +1,9 @@
 	<!-- Header section -->
 	<header class="header-section">
             <div class="logo">
-                @foreach ($acceuils as $item)
+                @foreach ($acceuils as $acceuil)
                     
-                <img src="{{$item->logonavbar}}" alt=""><!-- Logo -->               
+                <img src="{{$acceuil->logonavbar}}" alt=""><!-- Logo -->               
                 @endforeach
             </div>
             <!-- Navigation -->

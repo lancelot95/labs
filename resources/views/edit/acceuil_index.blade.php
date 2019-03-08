@@ -3,13 +3,16 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>modifier home</h1>
+   
 
 @stop
 
 @section('content')
-<h3>Image carousel</h3>
+<h3>image carousel</h3>
+@can('admin')
+
 <a class="btn btn bg-blue" href="{{route('acceuiladmin.create')}}">Ajouter une image</a>
+@endcan
 <table class="table">
   <thead>
     <tr>
@@ -35,7 +38,10 @@
 <h3>Titre et texte</h3>
 
 @foreach ($acceuils as $item)
+ @can('admin')
+
 <a class="btn btn bg-blue" href="{{route('acceuiladmin.edit',['id'=>$item->id])}}">Editer</a> 
+@endcan
 <table class="table">
   <thead>
     <tr>

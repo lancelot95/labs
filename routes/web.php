@@ -32,7 +32,9 @@ Route::resource('/projectadmin','ProjectController');
 Route::resource('/article','ArticleController');
 Route::resource('/tag','TagController');
 Route::resource('/categorie','CategorieController');
+Route::resource('/client','ClientController');
 
+Route::post('/search','BlogController@search')->name('search');
 Route::get('/affichage', 'BlogController@affichage')->name('affichage');
 Route::any('/validation/{commentaire}', 'BlogController@validation')->name('validation');
 Route::resource('/user','UserController');

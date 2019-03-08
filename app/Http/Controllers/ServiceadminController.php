@@ -6,6 +6,7 @@ use App\Acceuil;
 use App\Service;
 use App\Icon;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreServiceadmin;
 class ServiceadminController extends Controller
 {
     /**
@@ -41,7 +42,7 @@ class ServiceadminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreServiceadmin $request)
     {
         $newservice = new Service;
         $newservice->titre = $request ->titre;
@@ -87,7 +88,7 @@ class ServiceadminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreServiceadmin $request, $id)
     {
         $service = Service::where('id', $id)->first();
         $service->titre = $request->titre;

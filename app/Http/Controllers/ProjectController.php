@@ -6,6 +6,7 @@ use App\Project;
 use Storage;
 use Image;
 use App\Icon;
+use App\Http\Requests\StoreProject;
 use App\Services\Intervention;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Intervention $intervention)
+    public function store(StoreProject $request, Intervention $intervention)
     {
         $newproject = new Project;
         $newproject->titre = $request ->titre;
@@ -90,7 +91,7 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(StoreProject $request,$id)
     {
         $project = Project::where('id', $id)->first();
         $project->titre = $request->titre;

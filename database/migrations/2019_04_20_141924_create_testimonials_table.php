@@ -15,10 +15,10 @@ class CreateTestimonialsTable extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('clients');
             $table->string('texte');
-            $table->string('photo');
-            $table->string('nom');
-            $table->string('fonction');
+        
             $table->timestamps();
         });
     }

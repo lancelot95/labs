@@ -13,18 +13,18 @@ class TeamsTableSeeder extends Seeder
     {
         DB::table('teams')->insert([
             'image' => 'img/team/1.jpg',
-            'name' => 'Christinne Williams',
-            'post' => 'Project Manager',
+            'name' => 'Lancelot Goelen',
+            'post' => 'Administrateur et éditeur d article',
         ]);
         DB::table('teams')->insert([
             'image' => 'img/team/2.jpg',
-            'name' => 'Marcus Willy',
-            'post' => 'Junior developer',
+            'name' => 'Xavier Martinez',
+            'post' => 'Editeur d article',
         ]);
         DB::table('teams')->insert([
             'image' => 'img/team/3.jpg',
-            'name' => 'Jean Williams',
-            'post' => 'Digital designer',
+            'name' => 'Alessio Italio',
+            'post' => 'Editeur d article',
         ]);
      }
 

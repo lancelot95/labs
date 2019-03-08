@@ -9,7 +9,10 @@
 
 @section('content')
 <h3>Worlds</h3>
+
+
 <a class="btn btn bg-blue" href="{{route('worldadmin.create')}}">Ajouter un projet</a>
+
 <table class="table">
   <thead>
     <tr>
@@ -17,6 +20,7 @@
       <th>Titre</th>
       <th>Text</th>
       <th>Icon</th>
+      <th>Image</th>
       <th>Action</th>
       <th>Delete</th>
     </tr>
@@ -29,6 +33,7 @@
       <td>{{$item->texte}}</td> 
       <td><i class="{{$item->icons->code}}"></i></td>
       </td>
+    <td><img src="{{Storage::disk('image')->url($item->image)}}" height="50" alt=""></td>
       <td>
       <a class="btn btn bg-blue" href="{{route('worldadmin.edit',['worlds'=>$item->id])}}">Editer</a>
       </td>

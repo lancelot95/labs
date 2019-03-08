@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1>LABS</h1>
+    <a class="btn btn bg-blue" href="{{route('projectadmin.index')}}">Page précédente</a>
 @stop
 
 @section('content')

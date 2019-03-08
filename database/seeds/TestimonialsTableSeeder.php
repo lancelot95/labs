@@ -13,50 +13,37 @@ class TestimonialsTableSeeder extends Seeder
     {
         DB::table('testimonials')->insert([
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.',
-            'photo' => 'img/avatar/01.jpg',
-            'nom' => 'Michael Smith',
-            'fonction' => 'CEO compay',
+            'client_id'=>'1',
             
             
         ]);
         DB::table('testimonials')->insert([
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.',
-            'photo' => 'img/avatar/02.jpg',
-            'nom' => 'Julie Foulon',
-            'fonction' => 'CO-FONDATRICE',
+            'client_id'=>'2',
             
             
         ]);
         DB::table('testimonials')->insert([
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.',
-            'photo' => 'img/avatar/03.jpg',
-            'nom' => 'Steve Jobs',
-            'fonction' => 'CEO Apple',
+            'client_id'=>'3',
             
             
         ]);
         DB::table('testimonials')->insert([
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.',
-            'photo' => 'img/avatar/01.jpg',
-            'nom' => 'Mark Zuckerberg',
-            'fonction' => 'CEO Facebook',
+            'client_id'=>'4',
             
             
         ]);
         DB::table('testimonials')->insert([
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.',
-            'photo' => 'img/avatar/02.jpg',
-            'nom' => 'Alexiane Wyns',
-            'fonction' => 'CEO cabinet Alexiane Wyns',
+            'client_id'=>'5',
             
             
         ]);
         DB::table('testimonials')->insert([
             'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.',
-            'photo' => 'img/avatar/03.jpg',
-            'nom' => 'Michael Smith',
-            'fonction' => 'CEO compay',
-            
+            'client_id'=>'6',
             
         ]);
     }

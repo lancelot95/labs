@@ -13,19 +13,19 @@ class CarouselsTableSeeder extends Seeder
     {
        
         Carousel::create([
-             'image_url' => 'img/01.jpg',
-            'image_url' => 'img/card-2.jpg',
-            'image_url' => 'img/card-1.jpg',
+             'image_url' => '/card-1.jpg',
+            
+            
             
         ]);
-        // Carousel::create([
-        //     'image_url' => 'img/02.jpg',
+        Carousel::create([
+            'image_url' => '/card-2.jpg',
             
-        // ]);
-        // Carousel::create([
-        //     'image_url' => 'img/card-2.jpg',
+        ]);
+        Carousel::create([
+            'image_url' => '/card-3.jpg',
             
-        // ]);
+        ]);
 
     }
 }

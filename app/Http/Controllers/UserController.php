@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use App\Http\Requests\StoreUser;
 class UserController extends Controller
 {
     public function index()
@@ -30,6 +31,12 @@ class UserController extends Controller
         $newuser->save();
         // dd($request);
         $users = User::all();
-        return view('user_index',compact('users'));
+        return view('user.user_index',compact('users'));
+    }
+    public function destroy( User $user)
+    {
+        $user->delete();
+        $users = User::all();
+        return view('user.user_index',compact('users'));
     }
 }

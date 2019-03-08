@@ -7,6 +7,7 @@ use App\Article;
 use App\Acceuil;
 use App\Titre;
 use App\Categorie;
+use App\Instagram;
 use Illuminate\Http\Request;
 class TagController extends Controller
 {
@@ -56,9 +57,10 @@ class TagController extends Controller
         $tags = Tag::all();
         $categories = Categorie::all();
         $acceuils = Acceuil::all();
+        $instagrams = Instagram::all();
         // dd($articles);
        
-        return view('tag',compact('articles','titres','instagrams','acceuils','categories','tags','acceuils'));
+        return view('blog',compact('articles','titres','instagrams','acceuils','categories','tags','acceuils'));
     }
 
     /**

@@ -7,7 +7,9 @@ use App\Acceuil;
 use App\Carousel;
 use App\Service;
 use App\Testimonial;
+use App\Client;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreTestimonials;
 
 class TestimonialsadminController extends Controller
 {
@@ -20,8 +22,9 @@ class TestimonialsadminController extends Controller
     {
         
         $testimonials = Testimonial::all();
-
-        return view('testimonials.testimonial_index',compact('testimonials'));
+        $clients = Client::all();
+        
+        return view('testimonials.testimonial_index',compact('testimonials','clients'));
     }
 
     /**
@@ -31,7 +34,9 @@ class TestimonialsadminController extends Controller
      */
     public function create()
     {
-        return view('testimonials.testimonial_create');
+        $clients = Client::all();
+        $testimonials = Testimonial::all();
+        return view('testimonials.testimonial_create',compact('clients','testimonials'));
     }
 
     /**
@@ -40,18 +45,19 @@ class TestimonialsadminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTestimonials $request)
     {
         $newtestimonial = new Testimonial;
+        
         $newtestimonial->texte = $request->texte;
-        $newtestimonial->photo = $request->photo;
-        $newtestimonial->nom = $request->nom;
-        $newtestimonial->fonction = $request->fonction;
+        $newtestimonial->client_id = $request->client_id;
+        // $newtestimonial->fonction = $request->fonction;
         // dd($newservice);
         $newtestimonial->save();
         $testimonials = Testimonial::all();
+        $clients = Client::all();
         
-        return view('testimonials.testimonial_index',compact('testimonials'));
+        return view('testimonials.testimonial_index',compact('testimonials','clients'));
         
     }
 
@@ -63,7 +69,8 @@ class TestimonialsadminController extends Controller
      */
     public function show($id)
     {
-        //
+        $client = Client::where('id', $id)->first();
+        return view('testimonials.testimonial_show',compact('client'));
     }
 
     /**
@@ -72,11 +79,12 @@ class TestimonialsadminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( $id)
     {
         $test = Testimonial::where('id', $id)->first();
-        
-        return view('testimonials.testimonial_edit',compact('test'));
+        $client = Client::all()->first();
+       
+        return view('testimonials.testimonial_edit',compact('test','client'));
     }
 
     /**
@@ -86,13 +94,10 @@ class TestimonialsadminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Storetestimonials $request, $id)
     {
         $testimonial = Testimonial::where('id', $id)->first();
         $testimonial->texte = $request->texte;
-        $testimonial->photo = $request->photo;
-        $testimonial->nom = $request->nom;
-        $testimonial->fonction = $request->fonction;
         $testimonial->save();
 
         
@@ -114,10 +119,11 @@ class TestimonialsadminController extends Controller
      */
     public function destroy($id)
     {
+        Testimonial::where('client_id','LIKE', '%'.$id.'%')->delete();
         $testimonial = Testimonial::where('id',$id)->first();
         $testimonial->delete();
         $testimonials = Testimonial::all();
-        
-        return view('testimonials.testimonial_index',compact('testimonials'));
+        $clients = Client::all();
+        return view('testimonials.testimonial_index',compact('testimonials','clients'));
     }
 }

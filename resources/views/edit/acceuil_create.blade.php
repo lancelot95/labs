@@ -7,17 +7,25 @@
 @stop
 
 @section('content')
-{{-- <a class="btn btn bg-blue" href="{{route('acceuiladmin_index')}}">Page précédente</a> --}}
+<a class="btn btn bg-blue" href="{{route('acceuiladmin.index')}}">Page précédente</a>
+
 
 
     
   <form action="{{route('acceuiladmin.store')}}" method="POST" enctype="multipart/form-data">
   @csrf
-      <div class="form-group">
-            <label for="">Image</label>
-      <input type="file" class="form-control" name="image_url" id="" aria-describedby="helpId" value="">
-          
-      </div>
+  <div class="form-group">
+        <label for="">Image</label>
+        @if($errors->has('image'))
+              @foreach ($errors->get('image') as $error)
+                    <div class="text-danger">
+                          {{$errors->first('image')}}
+                    </div>
+              @endforeach
+        @endif
+        <input type="file" class="form-control" name="image" id="" aria-describedby="helpId" placeholder="">
+      
+  </div>
       <button class="btn-warning" type="submit">Submit</button>
     
   </form>

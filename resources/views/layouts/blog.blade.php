@@ -7,9 +7,10 @@
 	</div>
 	<header class="header-section">
 			<div class="logo">
-				@foreach ($acceuils as $item)
+				@foreach ($acceuils as $acceuil)
 					
-				<img src="{{$item->logonavbar}}" alt=""><!-- Logo -->               
+				<!-- Logo -->    
+				<img src="{{Storage::disk('image')->url($acceuil->logonavbar)}}">           
 				@endforeach
 			</div>
 			<!-- Navigation -->
@@ -46,10 +47,9 @@
 					<div class="post-item">
 						<div class="post-thumbnail">
 								<img src="{{Storage::disk('image')->url($item->img)}}" height="270" width="755" alt="">
-								<img src="{{$item->img}}" alt="">
+								<img src="{{asset($item->img)}}" alt="">
 							<div class="post-date">
-								<h2>03</h2>
-								<h3>Nov 2017</h3>
+								<p>{{$item->created_at->format('d - M - Y')}}</p>
 							</div>
 						</div>
 						<div class="post-content">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Contact;
 use Illuminate\Http\Request;
 use App\acceuil;
-
+use App\Http\Requests\StoreContactadmin;
 use App\Events\MailEvent;
 
 
@@ -103,7 +103,7 @@ class ContactController extends Controller
     {
         //
     }
-    public function mail (Request $request){
+    public function mail (StoreContactadmin $request){
         event(new MailEvent($request));
     
         return redirect()->back();

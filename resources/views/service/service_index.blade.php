@@ -12,7 +12,10 @@
 
 @section('content')
 <h3>Services</h3>
+
 <a class="btn btn bg-blue" href="{{route('serviceadmin.create')}}">Ajouter un service</a>
+  
+
 <table class="table">
   <thead>
     <tr>

@@ -3,6 +3,8 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
+<a class="btn btn bg-blue" href="{{route('article.index')}}">Page précédente</a>
+
 
 @stop
 

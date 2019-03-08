@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1>LABS</h1>
+    <a class="btn btn bg-blue" href="{{route('testimonialsadmin.index')}}"> Page précédente</a>
 @stop
 
 @section('content')
@@ -11,31 +12,20 @@
     @method("PUT")
 @csrf
 
-<div class="form-group">
-    <label for="">nom</label>
-    <input type="text" name="nom" id="" class="form-control" value="{{$test->nom}}" aria-describedby="helpId">
-    <small id="helpId" class="text-muted">Help text</small>
-</div>
 
-<div class="form-group">
-    <label for="">fonction</label>
-    <input type="text" name="fonction" id="" class="form-control" value="{{$test->fonction}}" aria-describedby="helpId">
-    <small id="helpId" class="text-muted">Help text</small>
-    
-</div>
 
- <div class="form-group">
-    <label for="">texte</label>
-    <input type="text" name="texte" id="" class="form-control" value="{{$test->texte}}" aria-describedby="helpId">
-    <small id="helpId" class="text-muted">Help text</small>
-</div>
-
-<div class="form-group">
-        <label for="">photo</label>
-        <input type="text" name="photo" id="" class="form-control" value="{{$test->photo}}" aria-describedby="helpId">
+    <div class="form-group">
+        <label for="">texte</label>
+            @if($errors->has('texte'))
+                @foreach ($errors->get('texte') as $error)
+                    <div class="text-danger">
+                        {{$errors->first('texte')}}
+                    </div>
+                @endforeach
+            @endif
+        <input type="text" name="texte" id="" class="form-control" aria-describedby="helpId">
         <small id="helpId" class="text-muted">Help text</small>
-         
-</div>
+    </div>
 
 <button class="btn btn-danger" type="submit">
         UPDATE

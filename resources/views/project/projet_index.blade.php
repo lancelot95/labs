@@ -9,7 +9,10 @@
 
 @section('content')
 <h3>Projects</h3>
+
 <a class="btn btn bg-blue" href="{{route('projectadmin.create')}}">Ajouter un projet</a>
+
+
 <table class="table">
   <thead>
     <tr>
@@ -17,8 +20,11 @@
       <th>Titre</th>
       <th>Text</th>
       <th>Image</th>
+      @can('editor')
+      
       <th>Action</th>
       <th>Delete</th>
+      @endcan
     </tr>
   </thead>
   <tbody>
@@ -29,6 +35,7 @@
       <td>{{$item->texte}}</td>
       <td><img src="{{asset($item->image)}}" height="100" width="100" alt=""></td>
       <td>
+        @can('editor')
       <a class="btn btn bg-blue" href="{{route('projectadmin.edit',['projects'=>$item->id])}}">Editer</a>
       </td>
       <td>
@@ -38,6 +45,7 @@
               <button class="btn btn bg-danger text-white" type="submit">Delete</button>
           </form>
         </td>
+        @endcan
     </tr>
     @endforeach
 

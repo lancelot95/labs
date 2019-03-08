@@ -12,9 +12,9 @@ class AcceuilsTableSeeder extends Seeder
     public function run()
     {
         DB::table('acceuils')->insert([
-            'logonavbar' =>'img/logo.png',
-            'biglogo' =>'img/big-logo.png',
-            'imagetestimonial'=>'../img/test-man.png',
+            'logonavbar' =>'/logo.png',
+            'biglogo' =>'/big-logo.png',
+            'imagetestimonial'=>'/test-man.png',
             'titrecarousel' => 'Get your freebie template now!',
             'titrelabsworld'=> 'GET IN  ',
             'titrevertworld'=>'THE LAB',

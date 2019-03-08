@@ -45,16 +45,16 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreArticle $request)
     {
+        
         $newarticle = new Article;
         $newalessio = new Alessio;
         $newtag = new Tag;
+        // $newarticle->img = $request->img->store('', 'image');
+       
+        // dd($request);
         $newarticle->img = $request->img->store('','image');
-        //  $img = $intervention->imageResize();
-        //  $img->save();
-
-
         $newarticle->titre =$request->titre;
         $newarticle->texte =$request->texte;
         $newarticle->categorie_id =$request->categorie_id;
@@ -129,6 +129,8 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
+       
+        Alessio::where('article_id','LIKE', '%'.$id.'%')->delete();
         $article = Article::where('id',$id)->first();
         $article->delete();
         $articles = Article::all();

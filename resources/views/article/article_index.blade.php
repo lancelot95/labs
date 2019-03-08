@@ -3,8 +3,12 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-   
+
+
+    
 <a class="btn btn bg-blue" href="{{route('article.create')}}">Créer un article</a>
+
+
 @stop
 
 @section('content')

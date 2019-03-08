@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<a class="btn btn bg-blue" href="{{route('home')}}">Page précédente</a>
+{{-- <a class="btn btn bg-blue" href="{{route('home')}}">Page précédente</a> --}}
 <a class="btn btn bg-blue" href="{{route('user.index')}}">Base de donnée</a>
   <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
 
@@ -47,6 +47,18 @@
             @endif
             <textarea class="form-control{{$errors-> has('password')?'border-danger':''}}" name="password" id="" rows="3" value="{{old('password')}}"></textarea>
       </div>
+      
+      <div class="form-group">
+                  <label for="">Image</label>
+                  @if($errors->has('image'))
+                        @foreach ($errors->get('image') as $error)
+                              <div class="text-danger">
+                                    {{$errors->first('image')}}
+                              </div>
+                        @endforeach
+                  @endif
+                  <input type="file" class="form-control {{$errors-> has('image')?'border-danger':''}}" name="image" id="" rows="3" value="{{old('image')}}">
+      </div>
       <div class="form-group">
             <label for="">role</label>
             <select name="role_id">
@@ -54,7 +66,7 @@
                   <option value="{{$item->id}}">{{$item->name}}</option>
                   @endforeach
             </select>
-            {{-- <textarea class="form-control{{$errors-> has('role')?'border-danger':''}}" name="role" id="" rows="3" value="{{old('role')}}"></textarea> --}}
+           
       </div>
      
 

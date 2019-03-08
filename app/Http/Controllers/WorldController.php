@@ -43,6 +43,7 @@ class WorldController extends Controller
         $newworld->titre = $request ->titre;
         $newworld->texte = $request ->texte;
         $newworld->icon_id = $request ->icon_id;
+        $newworld->image = $request ->image->store('','image');
         // dd($newservice);
         $newworld->save();
         $worlds = World::all();

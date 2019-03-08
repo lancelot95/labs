@@ -31,8 +31,7 @@
             <div id="hero-slider" class="owl-carousel">
                 
                 @foreach ($carou as $item)
-                <div class="item  hero-item" data-bg="{{Storage::disk('image')->url($item->image_url)}}" src="{{$item->image_url}}" alt=""></div>
-                 {{-- <img src="{{Storage::disk('image')->url($item->image_url)}}" height="270" width="755" alt=""> --}}
+                <img data-bg="{{Storage::disk('image')->url($item->image_url)}}" class="item  hero-item">
                 
                 @endforeach
             </div>
@@ -137,11 +136,11 @@
                             <p>{{$testimonial->texte}}</p>
                                 <div class="client-info">
                                     <div class="avatar">
-                                    <img src="{{$testimonial->photo}}" alt="">
+                                    <img src="{{Storage::disk('image')->url($testimonial->client->photo)}}" alt="">
                                     </div>
                                     <div class="client-name">
-                                    <h2>{{$testimonial->nom}}</h2>
-                                    <p>{{$testimonial->fonction}}</p>
+                                    <h2>{{$testimonial->client->nom}}</h2>
+                                    <p>{{$testimonial->client->fonction}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -171,14 +170,17 @@
                    
                 </div>
                 <div class="row">
-                    @foreach($teams as $team)
-                        <div class="col-sm-4">
-                            <div class="member">
-                                <img src="{{$team->image}}" alt="">
-                                <h2>{{$team->name}}</h2>
-                                <h3>{{$team->post}}</h3>
+                    @foreach($users as $user)
+                    
+                            <div class="col-sm-4">
+                                <div class="member">
+                                    <img src="{{Storage::disk('image')->url($user->image)}}"alt="">
+                                    <h2>{{$user->name}}</h2>
+                                    <h3>{{$user->role->name}}</h3>
+                                   
+                                </div>
                             </div>
-                        </div>
+                        
                     @endforeach
                 </div>
             </div>
